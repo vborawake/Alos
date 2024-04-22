@@ -9,6 +9,6 @@ app.get('/', (req, res) => {
   res.redirect('/Login/login.html');
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('Listening to 3000');
 });

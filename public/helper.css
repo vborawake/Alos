@@ -247,6 +247,11 @@ button {
   max-height: 3.5rem;
 }
 
+.top_cards > div {
+  width: 17.5rem;
+  margin-bottom: 1rem;
+}
+
 @media screen and (max-width: 1400px) and (min-width: 1200px) {
   .sidebar_wrapper {
     width: 18rem;
