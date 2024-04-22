@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bs-gray: #9699A0;
+  --bs-primary: rgba(0, 74, 147, 1);
+  --bs-secondary: #0275C5;
+  --light-gray: #FBF8F8;
+  --yellow: #E7B82A;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  height: 100vh;
+}
+
+.container-fluid {
+  font-size: 18px !important;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+.border-bottom-gray {
+  border-color: var(--bs-gray);
+}
+
+.filters button {
+  background: linear-gradient(180deg, #004A93 0%, #0275C5 100%);
+  color: #FFF;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  margin-right: 3rem;
+}
+
+.images div {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 6rem;
+  height: 6rem;
+}
+
+.payment div span {
+  box-shadow: 0px 4px 4px 0px #00000040;
+  background: var(--light-gray);
+  width: 6rem;
+  height: 4rem;
+  border-radius: 0.4rem;
+}
+
+.payment div input {
+  box-shadow: none;
+}
+
+.payment > div {
+  margin-right: 3rem;
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1200px) {
+  
+}
+
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+  .top-card {
+    width: 33%;
+  }
+
+  .table_header, .table_value {
+    width: 55rem !important;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .top-card {
+    width: 48%;
+  }
+
+  .table_header, .table_value {
+    width: 50rem !important;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .table_header, .table_value {
+    width: 45rem !important;
+  }
+
+  .top-card {
+    width: 48%;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
+  .top-card {
+    width: 100%;
+  }
+
+  .table_header, .table_value {
+    width: 40rem !important;
+  }
+}

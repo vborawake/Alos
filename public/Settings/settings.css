@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bs-gray: #9699A0;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  height: 100vh;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+.border-bottom-gray {
+  border-color: var(--bs-gray);
+}
+
+.popup {
+  left: 0;
+  right: 0;
+  width: 50%;
+  margin: 0 auto;
+}
+
+input[type='radio'] {
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem !important;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  box-shadow: none;
+}
+
+input[type='radio']::before {
+  content: '';
+  transform: scale(0);
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  box-shadow: inset 1rem 1rem #FFF;
+}
+
+input[type='radio']:checked::before {
+  transform: scale(1);
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1200px) {
+  
+}
+
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+  .top-card {
+    width: 33%;
+  }
+
+  .table_header, .table_value {
+    width: 55rem !important;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .top-card {
+    width: 48%;
+  }
+
+  .table_header, .table_value {
+    width: 50rem !important;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .table_header, .table_value {
+    width: 45rem !important;
+  }
+
+  .top-card {
+    width: 48%;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
+  .top-card {
+    width: 100%;
+  }
+
+  .table_header, .table_value {
+    width: 40rem !important;
+  }
+}

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./discounts.css">
+  <link rel="stylesheet" href="../helper.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="./discounts.js"></script>
+  <script defer src="../helper.js"></script>
+  <title>Alos | Promotions and Discounts</title>
+</head>
+<body>
+  <div class="container-fluid p-0 h-100">
+    <nav class="d-flex flex-row justify-content-between align-items-center">
+      <div class="d-md-none w-100 d-flex justify-content-between">
+        <img src="../images/logo.png" alt="logo" style="width: 12rem;" class="ms-5">
+        <nav class="navbar navbar-light bg-light" style="width: fit-content;">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar_content">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+      </div>
+      <div class="offcanvas-end w-100" id="navbar_content">
+        <div class="d-flex flex-md-row flex-column w-100 justify-content-md-between offcanvas-body">
+          <div class="col-md-6 col-12 d-flex flex-md-row flex-column align-items-md-center">
+            <img src="../images/logo.png" alt="logo" class="ms-md-5 nav_logo">
+            <button class="shadow-none border-0 ms-md-5 bg-transparent w-auto my-md-0 my-3">
+              <img src="../images/menu.png" alt="Menu">
+            </button>
+            <h4 class="text-primary fw-bold m-0 ms-3 mb-md-0 mb-3">Promotions and Discounts</h4>
+          </div>
+          <div class="col-md-6 col-12 align-items-md-center justify-content-end d-flex flex-md-row flex-column">
+            <div class="position-relative">
+              <input type="text" class="nav-search">
+              <img src="../images/search_black_24dp (1) 1.png" alt="search" class="position-absolute top-0 bottom-0 my-auto" style="left: 1rem;">
+            </div>
+            <div class="user d-flex flex-row align-items-center ms-md-5 me-md-5 my-md-0 my-3">
+              <span class="d-block bg-gray rounded-circle" style="height: 4rem; width: 4rem;"></span>
+              <p class="m-0 fw-bold fs-5 ms-3">John</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="d-flex flex-row">
+      <div class="sidebar_wrapper">
+        <nav class="navbar d-md-none d-block">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+        <div class="offcanvas-left" id="offcanvasLeft">
+          <div class="offcanvas-body p-0">
+            <div class="sidebar pb-5 bg-primary" style="top: 0;">
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Dashboard/dashboard.html'">
+                <img src="../images/dashboard.png" alt="dashboard_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Dashboard</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Customers/customer.html'">
+                <img src="../images/customer.png" alt="customer_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Customers</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Inventory/inventory.html'">
+                <img src="../images/tonometer.png" alt="logistics_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Logistics</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Orders/orders.html'">
+                <img src="../images/cart.png" alt="manage_orders_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Manage Orders</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Engineering/engineering.html'">
+                <img src="../images/request_service.png" alt="engineering_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Engineering</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Report/report.html'">
+                <img src="../images/request_service.png" alt="report_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Report & Analytics</p>
+              </div>
+              <div class="active p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Discounts/discounts.html'">
+                <img src="../images/discount.png" alt="promotions_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Promotions and Discounts</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/CMS/cms.html'">
+                <img src="../images/cms.png" alt="cms_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">CMS</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Settings/settings.html'">
+                <img src="../images/push_notifications.png" alt="settings_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Settings</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Feedback/feedback.html'">
+                <img src="../images/favourite.png" alt="feedback_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Feedback and Reviews</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Stores/stores.html'">
+                <img src="../images/grocery.png" alt="stores_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Stores</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Accounts/accounts.html'">
+                <img src="../images/accounts.png" alt="accounts_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Accounts</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Sales/sales.html'">
+                <img src="../images/sales_representative.png" alt="sales_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Sales Representative</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Engineer/engineer.html'">
+                <img src="../images/engineer.png" alt="engineer_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Engineer</p>
+              </div>
+            </div>
+            <div class="d-none d-md-flex flex-row justify-content-between bg-primary align-items-center position-absolute bottom-0 border-top border-top-primary border-5 w-100">
+              <button class="m-0 p-2 bg-transparent border-0 border">
+                <img src="../images/privacy_tip_black_24dp 1.png" alt="privacy" style="width: 1.3rem;">
+              </button>
+              <button class="m-0 p-2 bg-transparent border-0 border">
+                <img src="../images/help_white.png" alt="privacy" style="width: 1.3rem;">
+              </button>
+              <button class="m-0 p-2 bg-transparent border-0 border">
+                <img src="../images/power.png" alt="privacy" style="width: 1.3rem;">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-grow-1 p-4" style="position: absolute; top: 6rem; width: calc(100% - 20rem); left: 20rem; z-index: 1;">
+        <div class="promo_code table_wrapper my-4">
+          <div class="d-flex my-3 flex-lg-row flex-column justify-content-between align-items-lg-center">
+            <div class="col-4 d-flex align-items-center">
+              <h4 class="m-0 fw-bold me-3">Coupon Code For Promo</h4>
+            </div>
+            <div class="col-8 d-flex justify-content-end align-items-center">
+              <button class="border-3 rounded-3 bg-transparent border-primary text-primary fw-bold py-2 px-3 me-4" onclick="showDetails()">Manage Coupon Code</button>
+              <button class="border-3 rounded-3 bg-transparent border-primary text-primary fw-bold py-2 px-3" onclick="showPopup(event, 'add_code')">Add Coupon Code</button>
+            </div>
+          </div>
+          <div class="table promo_code">
+            <div class="table_header d-flex flex-row justify-content-between">
+              <p class="col-3 m-0 text-center">Coupon code</p>
+              <p class="col-1 m-0 text-center">Discount %</p>
+              <p class="col-2 m-0 text-center">Expiration Date</p>
+              <p class="col-1 m-0 text-center">Usage Limit</p>
+              <p class="col-1 m-0 text-center">Used Total</p>
+              <p class="col-1 m-0 text-center">Status</p>
+              <p class="col-1 m-0 text-center">Action</p>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <div class="d-flex align-items-center col-3">
+                <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
+                <p class="m-0 ms-2">PR-2023</p>
+              </div>
+              <p class="col-1 text-center m-0">10 %</p>
+              <p class="col-2 text-center m-0">20/07/2023</p>
+              <p class="col-1 text-center m-0">30</p>
+              <p class="col-1 text-center m-0 fw-bold">25</p>
+              <p class="col-1 text-center m-0 fw-bold text-primary">Active</p>
+              <div class="d-flex justify-content-between col-1 align-items-center">
+                <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_code')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+              </div>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <div class="d-flex align-items-center col-3">
+                <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
+                <p class="m-0 ms-2">PR-2023</p>
+              </div>
+              <p class="col-1 text-center m-0">10 %</p>
+              <p class="col-2 text-center m-0">20/07/2023</p>
+              <p class="col-1 text-center m-0">30</p>
+              <p class="col-1 text-center m-0 fw-bold">25</p>
+              <p class="col-1 text-center m-0 fw-bold text-yellow">Inactive</p>
+              <div class="d-flex justify-content-between col-1 align-items-center">
+                <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_code')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+              </div>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <div class="d-flex align-items-center col-3">
+                <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
+                <p class="m-0 ms-2">PR-2023</p>
+              </div>
+              <p class="col-1 text-center m-0">10 %</p>
+              <p class="col-2 text-center m-0">20/07/2023</p>
+              <p class="col-1 text-center m-0">30</p>
+              <p class="col-1 text-center m-0 fw-bold">25</p>
+              <p class="col-1 text-center m-0 fw-bold text-primary">Active</p>
+              <div class="d-flex justify-content-between col-1 align-items-center">
+                <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_code')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+              </div>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <div class="d-flex align-items-center col-3">
+                <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
+                <p class="m-0 ms-2">PR-2023</p>
+              </div>
+              <p class="col-1 text-center m-0">10 %</p>
+              <p class="col-2 text-center m-0">20/07/2023</p>
+              <p class="col-1 text-center m-0">30</p>
+              <p class="col-1 text-center m-0 fw-bold">25</p>
+              <p class="col-1 text-center m-0 fw-bold text-primary">Active</p>
+              <div class="d-flex justify-content-between col-1 align-items-center">
+                <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_code')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+              </div>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <div class="d-flex align-items-center col-3">
+                <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
+                <p class="m-0 ms-2">PR-2023</p>
+              </div>
+              <p class="col-1 text-center m-0">10 %</p>
+              <p class="col-2 text-center m-0">20/07/2023</p>
+              <p class="col-1 text-center m-0">30</p>
+              <p class="col-1 text-center m-0 fw-bold">25</p>
+              <p class="col-1 text-center m-0 fw-bold text-primary">Active</p>
+              <div class="d-flex justify-content-between col-1 align-items-center">
+                <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_code')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+              </div>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <div class="d-flex align-items-center col-3">
+                <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
+                <p class="m-0 ms-2">PR-2023</p>
+              </div>
+              <p class="col-1 text-center m-0">10 %</p>
+              <p class="col-2 text-center m-0">20/07/2023</p>
+              <p class="col-1 text-center m-0">30</p>
+              <p class="col-1 text-center m-0 fw-bold">25</p>
+              <p class="col-1 text-center m-0 fw-bold text-primary">Active</p>
+              <div class="d-flex justify-content-between col-1 align-items-center">
+                <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_code')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+              </div>
+            </div>
+          </div>
+          <div class="pagination d-flex justify-content-between">
+            <p class="m-0 fw-bold fs-5">Showing <span class="text-primary">01 - 07</span> of 14 entries</p>
+            <div class="d-flex align-items-center">
+              <p class="m-0 fw-bold ms-2">Previous</p>
+              <p class="m-0 fw-bold ms-2 px-3 py-2 bg-primary text-white rounded-3">1</p>
+              <p class="m-0 fw-bold ms-2 px-3 py-2 bg-gray text-white rounded-3">2</p>
+              <p class="m-0 fw-bold ms-2 px-3 py-2 bg-gray text-white rounded-3">3</p>
+              <p class="m-0 fw-bold ms-2">Next</p>
+            </div>
+          </div>
+        </div>
+        <div class="manage_code table_wrapper my-4 manage_code d-none">
+          <div class="d-flex my-3 flex-lg-row flex-column justify-content-between align-items-lg-center">
+            <div class="col-4 d-flex align-items-center">
+              <h4 class="m-0 fw-bold me-3" style="cursor: pointer;" onclick="showDetails()"><span class="text-primary">Back > </span>Manage Coupon Code</h4>
+            </div>
+          </div>
+          <div class="manage_code table">
+            <div class="table_header d-flex flex-row justify-content-between">
+              <p class="col-2 m-0 text-center">Coupon code</p>
+              <p class="col-2 m-0 text-center">Total Allocated</p>
+              <p class="col-2 m-0 text-center">Credit Used</p>
+              <p class="col-2 m-0 text-center">Balanced</p>
+              <p class="col-1 m-0 text-center"></p>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <p class="col-2 text-center m-0">PR-2023</p>
+              <p class="col-2 text-center m-0">$ 20000</p>
+              <p class="col-2 text-center m-0">$12000</p>
+              <p class="col-2 text-center m-0 fw-bold">$8000</p>
+              <p class="col-1 text-center m-0 fw-bold text-danger">Remove</p>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <p class="col-2 text-center m-0">PR-2023</p>
+              <p class="col-2 text-center m-0">$ 20000</p>
+              <p class="col-2 text-center m-0">$12000</p>
+              <p class="col-2 text-center m-0 fw-bold">$8000</p>
+              <p class="col-1 text-center m-0 fw-bold text-danger">Remove</p>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <p class="col-2 text-center m-0">PR-2023</p>
+              <p class="col-2 text-center m-0">$ 20000</p>
+              <p class="col-2 text-center m-0">$12000</p>
+              <p class="col-2 text-center m-0 fw-bold">$8000</p>
+              <p class="col-1 text-center m-0 fw-bold text-danger">Remove</p>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <p class="col-2 text-center m-0">PR-2023</p>
+              <p class="col-2 text-center m-0">$ 20000</p>
+              <p class="col-2 text-center m-0">$12000</p>
+              <p class="col-2 text-center m-0 fw-bold">$8000</p>
+              <p class="col-1 text-center m-0 fw-bold text-danger">Remove</p>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <p class="col-2 text-center m-0">PR-2023</p>
+              <p class="col-2 text-center m-0">$ 20000</p>
+              <p class="col-2 text-center m-0">$12000</p>
+              <p class="col-2 text-center m-0 fw-bold">$8000</p>
+              <p class="col-1 text-center m-0 fw-bold text-danger">Remove</p>
+            </div>
+          </div>
+          <div class="pagination d-flex justify-content-between">
+            <p class="m-0 fw-bold fs-5">Showing <span class="text-primary">01 - 07</span> of 14 entries</p>
+            <div class="d-flex align-items-center">
+              <p class="m-0 fw-bold ms-2">Previous</p>
+              <p class="m-0 fw-bold ms-2 px-3 py-2 bg-primary text-white rounded-3">1</p>
+              <p class="m-0 fw-bold ms-2 px-3 py-2 bg-gray text-white rounded-3">2</p>
+              <p class="m-0 fw-bold ms-2 px-3 py-2 bg-gray text-white rounded-3">3</p>
+              <p class="m-0 fw-bold ms-2">Next</p>
+            </div>
+          </div>
+        </div>
+        <div class="popup position-fixed left-0 right-0 mx-auto add_code rounded-3 bg-white p-4 d-none">
+          <div class="d-flex align-items-center justify-content-between">
+            <h4 class="text-primary fw-bold">Add Coupon Code</h4>
+            <img src="../images/cross_black.png" alt="close" style="cursor: pointer;" onclick="event.currentTarget.parentElement.parentElement.classList.add('d-none')">
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="mb-4 col-6 pe-4">
+              <p>Coupon Code</p>
+              <input type="text" class="w-100">
+            </div>
+            <div class="mb-4 col-6 pe-4">
+              <p>Discount Value</p>
+              <input type="text" class="w-100">
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="mb-4 col-6 pe-4">
+              <p>Expiration Date</p>
+              <input type="date" class="w-100">
+            </div>
+            <div class="mb-4 col-6 pe-4">
+              <p>Usage Limit</p>
+              <input type="text" class="w-100">
+            </div>
+          </div>
+          <div class="mb-4">
+            <p>Budget Amount</p>
+            <input type="text" class="w-100">
+          </div>
+          <div class="d-flex align-items-center">
+            <button class="rounded-3 bg-gradient me-4 text-white fw-bold border-0 px-5 py-2">Save</button>
+            <button class="bg-transparent text-gray border-0">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup position-fixed edit_code rounded-3 bg-white p-4 d-none" style="top: 5%;">
+      <div class="d-flex align-items-center justify-content-between">
+        <h4 class="text-primary fw-bold">Edit Coupon Code</h4>
+        <img src="../images/cross_black.png" alt="close" style="cursor: pointer;" onclick="event.currentTarget.parentElement.parentElement.classList.add('d-none')">
+      </div>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="mb-4 col-6 pe-4">
+          <p>Coupon Code</p>
+          <input type="text" class="w-100">
+        </div>
+        <div class="mb-4 col-6 pe-4">
+          <p>Discount Value</p>
+          <input type="text" class="w-100">
+        </div>
+      </div>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="mb-4 col-6 pe-4">
+          <p>Expiration Date</p>
+          <input type="date" class="w-100">
+        </div>
+        <div class="mb-4 col-6 pe-4">
+          <p>Usage Limit</p>
+          <input type="text" class="w-100">
+        </div>
+      </div>
+      <div class="mb-4">
+        <p>Budget Amount</p>
+        <input type="text" class="w-100">
+      </div>
+      <div class="mb-4">
+        <p>Upload Image</p>
+        <div class="d-flex align-items-end">
+          <span class="d-block rounded-3" style="width: 6rem; height: 6rem; box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);"></span>
+          <div class="position-relative d-flex ms-4">
+            <p class="m-0">Choose Image</p>
+            <img src="../images/upload_file_black_24dp 2.png" alt="upload_file" style="width: 1.5rem; height: 1.5rem;">
+            <input type="file" name="product_image" id="product_image" class="position-absolute opacity-0 w-100 h-100 top-0 left-0">
+          </div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center">
+        <button class="rounded-3 bg-gradient me-4 text-white fw-bold border-0 px-5 py-2">Save</button>
+        <button class="bg-transparent text-gray border-0">Cancel</button>
+      </div>
+    </div>
+    <div class="menu position-absolute rounded-3 bg-white text-black">
+      <a class="d-flex p-2 text-decoration-none fw-bold">
+        <img src="../images/account_circle_green.png" alt="prifile" style="height: 1.5rem; width: 1.5rem;" class="me-3">
+        <p class="m-0">Profile</p>
+      </a>
+      <a class="d-flex p-2 text-decoration-none fw-bold">
+        <img src="../images/password_green.png" alt="prifile" style="height: 1.5rem; width: 1.5rem;" class="me-3">
+        <p class="m-0">Change Password</p>
+      </a>
+      <a class="d-flex p-2 text-decoration-none fw-bold">
+        <img src="../images/notifications_green.png" alt="prifile" style="height: 1.5rem; width: 1.5rem;" class="me-3">
+        <p class="m-0">Notification Settings</p>
+      </a>
+      <a class="d-flex p-2 text-decoration-none fw-bold">
+        <img src="../images/logout_green.png" alt="prifile" style="height: 1.5rem; width: 1.5rem;" class="me-3">
+        <p class="m-0">Logout</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

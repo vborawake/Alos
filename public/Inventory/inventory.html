@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./inventory.css">
+  <link rel="stylesheet" href="../helper.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="./inventory.js"></script>
+  <script defer src="../helper.js"></script>
+  <title>Alos | Inventory</title>
+</head>
+<body>
+  <div class="container-fluid p-0 h-100">
+    <nav class="d-flex flex-row justify-content-between align-items-center">
+      <div class="d-md-none w-100 d-flex justify-content-between">
+        <img src="../images/logo.png" alt="logo" style="width: 12rem;" class="ms-5">
+        <nav class="navbar navbar-light bg-light" style="width: fit-content;">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar_content">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+      </div>
+      <div class="offcanvas-end w-100" id="navbar_content">
+        <div class="d-flex flex-md-row flex-column w-100 justify-content-md-between offcanvas-body">
+          <div class="col-md-6 col-12 d-flex flex-md-row flex-column align-items-md-center">
+            <img src="../images/logo.png" alt="logo" class="ms-md-5 nav_logo">
+            <button class="shadow-none border-0 ms-md-5 bg-transparent w-auto my-md-0 my-3">
+              <img src="../images/menu.png" alt="Menu">
+            </button>
+            <h4 class="text-primary fw-bold m-0 ms-3 mb-md-0 mb-3">Inventory</h4>
+          </div>
+          <div class="col-md-6 col-12 align-items-md-center justify-content-end d-flex flex-md-row flex-column">
+            <div class="position-relative">
+              <input type="text" class="nav-search">
+              <img src="../images/search_black_24dp (1) 1.png" alt="search" class="position-absolute top-0 bottom-0 my-auto" style="left: 1rem;">
+            </div>
+            <div class="user d-flex flex-row align-items-center ms-md-5 me-md-5 my-md-0 my-3">
+              <span class="d-block bg-gray rounded-circle" style="height: 4rem; width: 4rem;"></span>
+              <p class="m-0 fw-bold fs-5 ms-3">John</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="d-flex flex-row">
+      <div class="sidebar_wrapper">
+        <nav class="navbar d-md-none d-block">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+        <div class="offcanvas-left" id="offcanvasLeft">
+          <div class="offcanvas-body p-0">
+            <div class="sidebar pb-5 bg-primary" style="top: 0;">
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Dashboard/dashboard.html'">
+                <img src="../images/dashboard.png" alt="dashboard_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Dashboard</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Customers/customer.html'">
+                <img src="../images/customer.png" alt="customer_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Customers</p>
+              </div>
+              <div class="active p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Inventory/inventory.html'">
+                <img src="../images/tonometer.png" alt="logistics_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Logistics</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Orders/orders.html'">
+                <img src="../images/cart.png" alt="manage_orders_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Manage Orders</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Engineering/engineering.html'">
+                <img src="../images/request_service.png" alt="engineering_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Engineering</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Report/report.html'">
+                <img src="../images/request_service.png" alt="report_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Report & Analytics</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Discounts/discounts.html'">
+                <img src="../images/discount.png" alt="promotions_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Promotions and Discounts</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/CMS/cms.html'">
+                <img src="../images/cms.png" alt="cms_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">CMS</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Settings/settings.html'">
+                <img src="../images/push_notifications.png" alt="settings_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Settings</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Feedback/feedback.html'">
+                <img src="../images/favourite.png" alt="feedback_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Feedback and Reviews</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Stores/stores.html'">
+                <img src="../images/grocery.png" alt="stores_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Stores</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Accounts/accounts.html'">
+                <img src="../images/accounts.png" alt="accounts_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Accounts</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Sales/sales.html'">
+                <img src="../images/sales_representative.png" alt="sales_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Sales Representative</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Engineer/engineer.html'">
+                <img src="../images/engineer.png" alt="engineer_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Engineer</p>
+              </div>
+            </div>
+            <div class="d-none d-md-flex flex-row justify-content-between bg-primary align-items-center position-absolute bottom-0 border-top border-top-primary border-5 w-100">
+              <button class="m-0 p-2 bg-transparent border-0 border">
+                <img src="../images/privacy_tip_black_24dp 1.png" alt="privacy" style="width: 1.3rem;">
+              </button>
+              <button class="m-0 p-2 bg-transparent border-0 border">
+                <img src="../images/help_white.png" alt="privacy" style="width: 1.3rem;">
+              </button>
+              <button class="m-0 p-2 bg-transparent border-0 border">
+                <img src="../images/power.png" alt="privacy" style="width: 1.3rem;">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-grow-1 p-4" style="position: absolute; top: 6rem; width: calc(100% - 20rem); left: 20rem; z-index: 1;">
+        <div class="top_filters">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex justify-content-between flex-wrap align-items-center w-50">
+              <div class="dropdown">
+                <button class="btn dropdown-toggle text-primary bg-transparent border border-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">Stock Status</button>
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="dropdown-item">Stock Status</a></li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <button class="btn dropdown-toggle text-primary bg-transparent border border-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">Product Category</button>
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="dropdown-item">Product Category</a></li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <button class="btn dropdown-toggle text-primary bg-transparent border border-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">Sort By</button>
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="dropdown-item">Sort By</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="bg-transparent me-3 border-0 fw-bold text-gray">Clear</button>
+              <button class="bg-danger rounded-3 px-3 py-2 text-white fw-bold border-0">Apply</button>
+            </div>
+          </div>
+          <div class="d-flex filters align-items-center categories">
+            <button onclick="showDetails(event, 'in')">Stock In Entries</button>
+            <button onclick="showDetails(event, 'out')">Stock Out Entries</button>
+            <button onclick="showDetails(event, 'query')">Query</button>
+            <button onclick="showDetails(event, 'balance')">Stock Balance</button>
+            <button onclick="showDetails(event, 'quotation')">Quotation</button>
+          </div>
+        </div>
+        <div class="equipment table_wrapper my-4">
+          <div class="d-flex my-3 flex-lg-row flex-column justify-content-between align-items-lg-center">
+            <div class="col-4 d-flex align-items-center">
+              <h4 class="m-0 fw-bold me-3">List of all Equipments </h4>
+              <button style="width: 1.5rem; height: 1.5rem;" class="bg-transparent border-0"><img src="../images/picture_as_pdf.png" alt="pdf" style="width: 150%;"></button>
+            </div>
+            <div class="col-8 d-flex justify-content-end align-items-center">
+              <button class="border-3 rounded-3 bg-transparent border-primary text-primary fw-bold py-2 px-3 me-4" onclick="showDetails(event, 'add_equipment')">Add New Equipment</button>
+              <button class="border-3 rounded-3 bg-transparent border-primary text-primary fw-bold py-2 px-3" onclick="showDetails(event, 'add_equipment')">Manage Equipment</button>
+            </div>
+          </div>
+          <div class="equipment table">
+            <div class="table_header d-flex flex-row justify-content-between">
+              <p class="col-3 m-0 text-center">Equipment Name</p>
+              <p class="col-1 m-0 text-center">Product Code</p>
+              <p class="col-2 m-0 text-center">Stock Status</p>
+              <p class="col-1 m-0 text-center">Price</p>
+              <p class="col-2 m-0 text-center">Date</p>
+              <p class="col-1 m-0 text-center">Rate</p>
+              <p class="col-1 m-0 text-center">Action</p>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <div class="d-flex align-items-center col-3">
+                <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
+                <p class="m-0 ms-2">Urine Analyzer</p>
+              </div>
+              <p class="col-1 text-center m-0">PR - 001</p>
+              <p class="col-2 text-center m-0 text-success">In Stock (120)</p>
+              <p class="col-1 text-center m-0 text-success">$ 200</p>
+              <p class="col-2 text-center m-0 fw-bold">Last Modified: 20/07/2023</p>
+              <div class="col-1 text-center m-0 text-success fw-bold d-flex align-items-center">
+                <img src="../images/Vector (4).png" alt="star-filled" class="p-0" style="width: 1rem; height: 1rem;">
+                <p class="m-0">(4)</p>
+              </div>
+              <div class="d-flex justify-content-between col-1 align-items-center">
+                <button class="border-0 bg-transparent" onclick="showDetails(event)" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+              </div>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <div class="d-flex align-items-center col-3">
+                <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
+                <p class="m-0 ms-2">Urine Analyzer</p>
+              </div>
+              <p class="col-1 text-center m-0">PR - 001</p>
+              <p class="col-2 text-center m-0 text-yellow">Low Inventory (4)</p>
+              <p class="col-1 text-center m-0 text-success">$ 200</p>
+              <p class="col-2 text-center m-0 fw-bold">Last Modified: 20/07/2023</p>
+              <div class="col-1 text-center m-0 text-success fw-bold d-flex align-items-center">
+                <img src="../images/Vector (5).png" alt="star-filled" class="p-0" style="width: 1rem; height: 1rem;">
+                <p class="m-0"></p>
+              </div>
+              <div class="d-flex justify-content-between col-1 align-items-center">
+                <button class="border-0 bg-transparent" onclick="showDetails(event)" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+              </div>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <div class="d-flex align-items-center col-3">
+                <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
+                <p class="m-0 ms-2">Urine Analyzer</p>
+              </div>
+              <p class="col-1 text-center m-0">PR - 001</p>
+              <p class="col-2 text-center m-0 text-danger">Out of Stock (0)</p>
+              <p class="col-1 text-center m-0 text-success">$ 200</p>
+              <p class="col-2 text-center m-0 fw-bold">Last Modified: 20/07/2023</p>
+              <div class="col-1 text-center m-0 text-success fw-bold d-flex align-items-center">
+                <img src="../images/Vector (5).png" alt="star-filled" class="p-0" style="width: 1rem; height: 1rem;">
+                <p class="m-0"></p>
+              </div>
+              <div class="d-flex justify-content-between col-1 align-items-center">
+                <button class="border-0 bg-transparent" onclick="showDetails(event)" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+              </div>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <div class="d-flex align-items-center col-3">
+                <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
+                <p class="m-0 ms-2">Urine Analyzer</p>
+              </div>
+              <p class="col-1 text-center m-0">PR - 001</p>
+              <p class="col-2 text-center m-0 text-primary">On Demand</p>
+              <p class="col-1 text-center m-0 text-success">$ 200</p>
+              <p class="col-2 text-center m-0 fw-bold">Last Modified: 20/07/2023</p>
+              <div class="col-1 text-center m-0 text-success fw-bold d-flex align-items-center">
+                <img src="../images/Vector (4).png" alt="star-filled" class="p-0" style="width: 1rem; height: 1rem;">
+                <p class="m-0">(3)</p>
+              </div>
+              <div class="d-flex justify-content-between col-1 align-items-center">
+                <button class="border-0 bg-transparent" onclick="showDetails(event)" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+              </div>
+            </div>
+          </div>
+          <div class="pagination d-flex justify-content-between">
+            <p class="m-0 fw-bold fs-5">Showing <span class="text-primary">01 - 07</span> of 14 entries</p>
+            <div class="d-flex align-items-center">
+              <p class="m-0 fw-bold ms-2">Previous</p>
+              <p class="m-0 fw-bold ms-2 px-3 py-2 bg-primary text-white rounded-3">1</p>
+              <p class="m-0 fw-bold ms-2 px-3 py-2 bg-gray text-white rounded-3">2</p>
+              <p class="m-0 fw-bold ms-2 px-3 py-2 bg-gray text-white rounded-3">3</p>
+              <p class="m-0 fw-bold ms-2">Next</p>
+            </div>
+          </div>
+        </div>
+        <div class="details box p-3 rounded-4 d-none">
+          <div class="d-flex flex-md-row flex-column justify-content-between align-items-center">
+            <h4 onclick="showDetails(event)" style="cursor: pointer;" class="fw-bold"><span class="text-primary">Back > </span>Equipment Details</h4>
+            <div class="details_buttons d-flex justify-content-end align-items-center">
+              <button class="bg-primary text-white border-0 rounded-3 px-3 py-2 fw-bold me-4">Publish Product</button>
+              <button class="border-2 bg-transparent border-danger text-danger px-3 py-2 rounded-3 fw-bold">Save to Drafts</button>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between my-4">
+            <div class="col-12 form">
+              <div class="d-flex justify-content-between flex-lg-row flex-column">
+                <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                  <p class="m-0 col-3">Equipment Name</p>
+                  <input type="text" class="rounded-3 col-9" placeholder="Urine Analyzer">
+                </div>
+                <div class="d-flex align-items-center mb-lg-0 mb-4 fw-bold col-lg-5 col-12">
+                  <p class="m-0 col-3">Brand</p>
+                  <input type="text" class="rounded-3 col-9" placeholder="Siemens">
+                </div>
+              </div>
+              <div class="d-flex justify-content-between flex-lg-row flex-column">
+                <div class="d-flex align-items-center mb-lg-0 mb-4 fw-bold col-lg-5 col-12">
+                  <p class="m-0 col-3">Category</p>
+                  <input type="text" class="rounded-3 col-9" placeholder="Lab Equipment">
+                </div>
+                <div class="d-flex align-items-center fw-bold col-lg-5 col-12">
+                  <p class="m-0 col-3">Stock Status</p>
+                  <input type="text" class="rounded-3 col-9" placeholder="In Stock">
+                </div>
+              </div>
+              <div class="d-flex flex-lg-row flex-column justify-content-between my-4">
+                <div class="d-flex align-items-center mb-lg-0 mb-4 fw-bold col-lg-5 col-12">
+                  <p class="m-0 col-3">SKU</p>
+                  <input type="text" class="rounded-3 col-9" placeholder="PR-001">
+                </div>
+                <div class="d-flex align-items-center fw-bold col-lg-5 col-12">
+                  <p class="m-0 col-3">Quantity</p>
+                  <div class="d-flex justify-content-between">
+                    <input type="text" class="rounded-3 col-5" placeholder="100">
+                    <input type="text" class="rounded-3 col-6" placeholder="100">
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between flex-lg-row flex-column">
+                <div class="d-flex align-items-center fw-bold col-lg-5 col-12">
+                  <p class="m-0 col-3">Regular Price</p>
+                  <input type="text" class="rounded-3 col-9" placeholder="$ 200">
+                </div>
+                <div class="d-flex align-items-center fw-bold col-lg-5 col-12">
+                  <p class="m-0 col-3">Sale Price</p>
+                  <input type="text" class="rounded-3 col-9" placeholder="$ 190">
+                </div>
+              </div>
+              <div class="d-flex justify-content-between flex-lg-row flex-column my-4">
+                <div class="d-flex align-items-center fw-bold col-lg-5 col-12">
+                  <p class="m-0 col-3">Schedule</p>
+                  <input type="text" class="rounded-3 col-9" placeholder="Urine Analyzer">
+                </div>
+                <div class="d-flex align-items-center fw-bold col-lg-5 col-12">
+                  <p class="m-0 col-3">Promotion Code</p>
+                  <input type="text" class="rounded-3 col-9" placeholder="PR786977">
+                </div>
+              </div>
+              <div class="d-flex justify-content-between flex-lg-row flex-column my-4">
+                <div class="d-flex align-items-center mb-lg-0 mb-4 fw-bold col-lg-5 col-12">
+                  <p class="m-0 col-3">Warranty</p>
+                  <input type="text" class="rounded-3 col-9" placeholder="From Manufacturer">
+                </div>
+                <div class="d-flex align-items-center fw-bold col-lg-5 col-12">
+                  <p class="m-0 col-3">Expiry Date</p>
+                  <input type="text" class="rounded-3 col-9" placeholder="21/03/2025">
+                </div>
+              </div>
+              <div class="d-flex flex-xl-row flex-column custom align-items-xl-center fw-bold col-12 mb-3">
+                <p class="m-0" style="width: 10%;">Description</p>
+                <textarea class="rounded-3" placeholder="Description" style="width: 90%;"></textarea>
+              </div>
+              <div class="d-flex align-items-xl-center align-items-start fw-bold">
+                <p class="m-0 col-1">Equipment Images</p>
+                <div class="d-flex align-items-center images col-xl-9 col-8 ms-md-3 ms-5 ps-xl-0 ps-5 flex-wrap">
+                  <div class="d-flex flex-column bg-gray-100 justify-content-center align-items-center mb-xxl-0 mb-4 rounded-3 position-relative me-5">
+                    <img src="../images/camera.png" alt="image">
+                    <p class="m-0 text-center text-gray" style="font-size: 12px;">Browse Image</p>
+                    <input type="file" name="equipment_image" id="equipment_image" class="opacity-0 position-absolute w-100 h-100">
+                  </div>
+                  <div class="d-flex flex-column bg-gray-100 justify-content-center align-items-center mb-xxl-0 mb-4 rounded-3 position-relative me-5">
+                    <img src="../images/camera.png" alt="image">
+                    <p class="m-0 text-center text-gray" style="font-size: 12px;">Browse Image</p>
+                    <input type="file" name="equipment_image" id="equipment_image" class="opacity-0 position-absolute w-100 h-100">
+                  </div>
+                  <div class="d-flex flex-column bg-gray-100 justify-content-center align-items-center mb-xxl-0 mb-4 rounded-3 position-relative me-5">
+                    <img src="../images/camera.png" alt="image">
+                    <p class="m-0 text-center text-gray" style="font-size: 12px;">Browse Image</p>
+                    <input type="file" name="equipment_image" id="equipment_image" class="opacity-0 position-absolute w-100 h-100">
+                  </div>
+                  <div class="d-flex flex-column bg-gray-100 justify-content-center align-items-center mb-xxl-0 mb-4 rounded-3 position-relative me-5">
+                    <img src="../images/camera.png" alt="image">
+                    <p class="m-0 text-center text-gray" style="font-size: 12px;">Browse Image</p>
+                    <input type="file" name="equipment_image" id="equipment_image" class="opacity-0 position-absolute w-100 h-100">
+                  </div>
+                  <div class="d-flex flex-column bg-gray-100 justify-content-center align-items-center mb-xxl-0 mb-4 rounded-3 position-relative me-5">
+                    <img src="../images/camera.png" alt="image">
+                    <p class="m-0 text-center text-gray" style="font-size: 12px;">Browse Image</p>
+                    <input type="file" name="equipment_image" id="equipment_image" class="opacity-0 position-absolute w-100 h-100">
+                  </div>
+                </div>
+              </div>
+              <div class="payment_wrapper d-flex align-items-center fw-bold col-5 mt-4">
+                <p class="m-0 col-3">Payment Method</p>
+                <div class="d-flex align-items-center payment">
+                  <div class="d-flex align-items-center flex-column">
+                    <span class="d-block">
+                      
+                    </span>
+                    <input type="radio" name="payment" id="payment">
+                  </div>
+                  <div class="d-flex align-items-center flex-column">
+                    <span class="d-block">
+                      
+                    </span>
+                    <input type="radio" name="payment" id="payment">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stock_entries box p-3 rounded-4 d-none">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 onclick="showDetails(event, 'in')" style="cursor: pointer;" class="fw-bold"><span class="text-primary">Back > </span>Stock In Entries</h4>
+            <button class="bg-primary text-white border-0 rounded-3 px-3 py-2 fw-bold me-4">Save</button>
+          </div>
+          <div class="d-flex justify-content-between my-4">
+            <div class="col-12 form">
+              <div class="in_entries">
+                <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Invoice No</p>
+                    <input type="text" class="rounded-3 col-9" placeholder="101">
+                  </div>
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Date</p>
+                    <input type="date" class="rounded-3 col-9 stock_date">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Delivery No</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Product Name</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Quantity</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Cost Price</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between flex-lg-row flex-column my-4">
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Lot / Batch Number</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Expiring Date</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between my-4">
+                  <div class="d-flex align-items-center fw-bold col-5">
+                    <p class="m-0 col-3">Facility/Clients</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                </div>
+              </div>
+              <div class="out_entries">
+                <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Date</p>
+                    <input type="date" class="rounded-3 col-9 stock_date">
+                  </div>
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Requested Officer</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between flex-lg-row flex-column mb-4">
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Product Name</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Quantity</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Lot / Batch Number</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Cost Price</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between flex-lg-row flex-column my-4">
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Facility/Clients</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Expiring Date</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                </div>
+              </div>
+              <div class="quotation d-none">
+                <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Invoice No</p>
+                    <input type="text" class="rounded-3 col-9" placeholder="101">
+                  </div>
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Date</p>
+                    <input type="date" class="rounded-3 col-9 stock_date">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between flex-lg-row flex-column mb-4">
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Product Name</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Quantity</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Cost Price</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                  <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
+                    <p class="m-0 col-3">Expiring Date</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between my-4">
+                  <div class="d-flex align-items-center fw-bold col-5">
+                    <p class="m-0 col-3">Facility/Clients</p>
+                    <input type="text" class="rounded-3 col-9">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="query box p-3 rounded-4 d-none">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 onclick="showDetails(event, 'query')" style="cursor: pointer;" class="fw-bold"><span class="text-primary">Back > </span>Query</h4>
+          </div>
+          <div class="d-flex justify-content-between my-4">
+            <div class="col-12 form">
+              <div class="d-flex justify-content-between">
+                <div class="d-flex col-4 align-items-center fw-bold">
+                  <p class="m-0 col-3">Product Name</p>
+                  <input type="text" class="rounded-3 col-9">
+                </div>
+                <div class="d-flex col-4 align-items-center fw-bold">
+                  <p class="m-0 col-3">Date</p>
+                  <input type="date" class="rounded-3 col-9 stock_date">
+                </div>
+                <div class="col-3 d-flex justify-content-end align-items-center">
+                  <button class="bg-primary text-white border-0 rounded-3 px-3 py-2 fw-bold me-4">Search</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="table_wrapper my-4">
+            <div class="table">
+              <div class="table_header d-flex flex-row justify-content-between">
+                <p class="col-3 m-0 text-center">Product Name</p>
+                <p class="col-3 m-0 text-center">Summary</p>
+                <p class="col-1 m-0 text-center">Action</p>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <p class="col-3 text-center m-0">Urine Analyzer</p>
+                <p class="col-3 m-0 text-success">Cold light source with high luminosity, long shelf life Innovative light sensor, high sensitivity Automatic calibration improves accuracy Standard RS232 interface for connection with external computer Storage of 1000 testing results</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="balance box p-3 rounded-4 d-none">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 onclick="showDetails(event, 'balance')" style="cursor: pointer;" class="fw-bold"><span class="text-primary">Back > </span>Stock Balance</h4>
+          </div>
+          <div class="table_wrapper my-4">
+            <div class="d-flex my-3 justify-content-between align-items-center">
+              <div class="col-4 d-flex align-items-center">
+                <h4 class="m-0 fw-bold me-3">List of all Products</h4>
+              </div>
+            </div>
+            <div class="stock table">
+              <div class="table_header d-flex flex-row justify-content-between">
+                <p class="col-2 m-0 text-center">Product Name</p>
+                <p class="col-2 m-0 text-center">Quantity Received</p>
+                <p class="col-2 m-0 text-center">Product Purchased</p>
+                <p class="col-2 m-0 text-center">Balance Available</p>
+                <p class="col-2 m-0 text-center">Reorder Level</p>
+                <p class="col-1 m-0 text-center">Action</p>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <p class="col-2 text-center m-0">Urine Analyzer</p>
+                <p class="col-2 m-0 text-success">10</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <p class="col-2 text-center m-0">Urine Analyzer</p>
+                <p class="col-2 m-0 text-success">10</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <p class="col-2 text-center m-0">Urine Analyzer</p>
+                <p class="col-2 m-0 text-success">10</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <p class="col-2 text-center m-0">Urine Analyzer</p>
+                <p class="col-2 m-0 text-success">10</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <p class="col-2 text-center m-0">Urine Analyzer</p>
+                <p class="col-2 m-0 text-success">10</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <p class="col-2 text-center m-0">Urine Analyzer</p>
+                <p class="col-2 m-0 text-success">10</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <p class="col-2 text-center m-0">Urine Analyzer</p>
+                <p class="col-2 m-0 text-success">10</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <p class="col-2 m-0 text-success">4</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="add_equipment box p-3 rounded-4 d-none">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 onclick="showDetails(event, 'add_equipment')" style="cursor: pointer;" class="fw-bold"><span class="text-primary">Back > </span>List of all Categories</h4>
+            <button onclick="showPopup(event, 'add_category')" class="border-primary px-3 py-2 border-3 rounded-3 bg-transparent text-primary fw-bold">Add New Category</button>
+          </div>
+          <div class="table_wrapper my-4">
+            <div class="table">
+              <div class="table_header d-flex flex-row justify-content-between">
+                <p class="col-2 m-0 text-center">Category Name</p>
+                <p class="col-2 m-0 text-center">Total Equipments</p>
+                <p class="col-1 m-0 text-center">Action</p>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <p class="col-2 text-center m-0" style="cursor: pointer;" onclick="showDetails(event, 'add_consumable')">Equipments</p>
+                <p class="col-2 m-0 text-center">120</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_category')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <p class="col-2 text-center m-0" style="cursor: pointer;" onclick="showDetails(event, 'add_consumable')">POCT</p>
+                <p class="col-2 m-0 text-center">120</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_category')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <p class="col-2 text-center m-0" style="cursor: pointer;" onclick="showDetails(event, 'add_consumable')">Tests Kits</p>
+                <p class="col-2 m-0 text-center">120</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_category')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <p class="col-2 text-center m-0" style="cursor: pointer;" onclick="showDetails(event, 'add_consumable')">Consumables</p>
+                <p class="col-2 m-0 text-center">120</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_category')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="add_consumable box p-3 rounded-4 d-none">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 onclick="showDetails(event, 'add_consumable')" style="cursor: pointer;" class="fw-bold"><span class="text-primary">Back > </span>List Of All Consumables</h4>
+            <button onclick="showPopup(event, 'add_product')" class="border-primary px-3 py-2 border-3 rounded-3 bg-transparent text-primary fw-bold">Add New Equipment</button>
+          </div>
+          <div class="table_wrapper my-4">
+            <div class="table">
+              <div class="table_header d-flex flex-row justify-content-between">
+                <p class="col-2 m-0">Image</p>
+                <p class="col-2 m-0 text-center">Equipment Name</p>
+                <p class="col-1 m-0 text-center">Action</p>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <div class="col-2"><span class="d-block rounded-3 bg-gray" style="width: 2rem; height: 2rem;"></span></div>
+                <p class="col-2 m-0 text-center">Versa tips</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_product')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <div class="col-2"><span class="d-block rounded-3 bg-gray" style="width: 2rem; height: 2rem;"></span></div>
+                <p class="col-2 m-0 text-center">Sample Cups</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_product')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <div class="col-2"><span class="d-block rounded-3 bg-gray" style="width: 2rem; height: 2rem;"></span></div>
+                <p class="col-2 m-0 text-center">Humidity Pack</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_product')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <div class="col-2"><span class="d-block rounded-3 bg-gray" style="width: 2rem; height: 2rem;"></span></div>
+                <p class="col-2 m-0 text-center">Micro Tips</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_product')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <div class="col-2"><span class="d-block rounded-3 bg-gray" style="width: 2rem; height: 2rem;"></span></div>
+                <p class="col-2 m-0 text-center">Dessicant Caps</p>
+                <div class="d-flex justify-content-between col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_product')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+            </div>
+            <div class="pagination d-flex justify-content-between">
+              <p class="m-0 fw-bold fs-5">Showing <span class="text-primary">01 - 07</span> of 14 entries</p>
+              <div class="d-flex align-items-center">
+                <p class="m-0 fw-bold ms-2">Previous</p>
+                <p class="m-0 fw-bold ms-2 px-3 py-2 bg-primary text-white rounded-3">1</p>
+                <p class="m-0 fw-bold ms-2 px-3 py-2 bg-gray text-white rounded-3">2</p>
+                <p class="m-0 fw-bold ms-2 px-3 py-2 bg-gray text-white rounded-3">3</p>
+                <p class="m-0 fw-bold ms-2">Next</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup position-fixed left-0 right-0 mx-auto edit_category rounded-3 bg-white p-4 d-none">
+          <div class="d-flex align-items-center justify-content-between">
+            <h4 class="text-primary fw-bold">Edit Category</h4>
+            <img src="../images/cross_black.png" alt="close" style="cursor: pointer;" onclick="event.currentTarget.parentElement.parentElement.classList.add('d-none')">
+          </div>
+          <div class="mb-4">
+            <p>Category Name</p>
+            <input type="text" class="w-100" placeholder="Lab Consumables">
+          </div>
+          <div class="mb-4">
+            <p>Total Equipments</p>
+            <input type="text" class="w-100" placeholder="20">
+          </div>
+          <div class="d-flex align-items-center">
+            <button class="rounded-3 bg-gradient me-4 text-white fw-bold border-0 px-5 py-2">Save</button>
+            <button class="bg-transparent text-gray border-0">Cancel</button>
+          </div>
+        </div>
+        <div class="popup position-fixed left-0 right-0 mx-auto add_category rounded-3 bg-white p-4 d-none">
+          <div class="d-flex align-items-center justify-content-between">
+            <h4 class="text-primary fw-bold">Add Category</h4>
+            <img src="../images/cross_black.png" alt="close" style="cursor: pointer;" onclick="event.currentTarget.parentElement.parentElement.classList.add('d-none')">
+          </div>
+          <div class="mb-4">
+            <p>Category Name</p>
+            <input type="text" class="w-100">
+          </div>
+          <div class="mb-4">
+            <p>Total Equipments</p>
+            <input type="text" class="w-100">
+          </div>
+          <div class="d-flex align-items-center">
+            <button class="rounded-3 bg-gradient me-4 text-white fw-bold border-0 px-5 py-2">Save</button>
+            <button class="bg-transparent text-gray border-0">Cancel</button>
+          </div>
+        </div>
+        <div class="popup position-fixed left-0 right-0 mx-auto add_product rounded-3 bg-white p-4 d-none">
+          <div class="d-flex align-items-center justify-content-between">
+            <h4 class="text-primary fw-bold">Add New Equipment</h4>
+            <img src="../images/cross_black.png" alt="close" style="cursor: pointer;" onclick="event.currentTarget.parentElement.parentElement.classList.add('d-none')">
+          </div>
+          <div class="mb-4">
+            <p>Equipment Name</p>
+            <input type="text" class="w-100">
+          </div>
+          <div class="mb-4">
+            <p>Image</p>
+            <div class="d-flex align-items-end">
+              <span class="d-block rounded-3" style="width: 6rem; height: 6rem; box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);"></span>
+              <div class="position-relative d-flex ms-4">
+                <p class="m-0">Choose Image</p>
+                <img src="../images/upload_file_black_24dp 2.png" alt="upload_file" style="width: 1.5rem; height: 1.5rem;">
+                <input type="file" name="product_image" id="product_image" class="position-absolute opacity-0 w-100 h-100 top-0 left-0">
+              </div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center">
+            <button class="rounded-3 bg-gradient me-4 text-white fw-bold border-0 px-5 py-2">Save</button>
+            <button class="bg-transparent text-gray border-0" onclick="document.querySelector('.add_product').classList.add('d-none')">Cancel</button>
+          </div>
+        </div>
+        <div class="popup position-fixed left-0 right-0 mx-auto edit_product rounded-3 bg-white p-4 d-none">
+          <div class="d-flex align-items-center justify-content-between">
+            <h4 class="text-primary fw-bold">Edit Equipment</h4>
+            <img src="../images/cross_black.png" alt="close" style="cursor: pointer;" onclick="event.currentTarget.parentElement.parentElement.classList.add('d-none')">
+          </div>
+          <div class="mb-4">
+            <p>Equipment Name</p>
+            <input type="text" class="w-100">
+          </div>
+          <div class="mb-4">
+            <p>Image</p>
+            <div class="d-flex align-items-end">
+              <span class="d-block rounded-3" style="width: 6rem; height: 6rem; box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);"></span>
+              <div class="position-relative d-flex ms-4">
+                <p class="m-0">Choose Image</p>
+                <img src="../images/upload_file_black_24dp 2.png" alt="upload_file" style="width: 1.5rem; height: 1.5rem;">
+                <input type="file" name="product_image" id="product_image" class="position-absolute opacity-0 w-100 h-100 top-0 left-0">
+              </div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center">
+            <button class="rounded-3 bg-gradient me-4 text-white fw-bold border-0 px-5 py-2">Save</button>
+            <button class="bg-transparent text-gray border-0" onclick="document.querySelector('.edit_product').classList.add('d-none')">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu position-absolute rounded-3 bg-white text-black">
+      <a class="d-flex p-2 text-decoration-none fw-bold">
+        <img src="../images/account_circle_green.png" alt="prifile" style="height: 1.5rem; width: 1.5rem;" class="me-3">
+        <p class="m-0">Profile</p>
+      </a>
+      <a class="d-flex p-2 text-decoration-none fw-bold">
+        <img src="../images/password_green.png" alt="prifile" style="height: 1.5rem; width: 1.5rem;" class="me-3">
+        <p class="m-0">Change Password</p>
+      </a>
+      <a class="d-flex p-2 text-decoration-none fw-bold">
+        <img src="../images/notifications_green.png" alt="prifile" style="height: 1.5rem; width: 1.5rem;" class="me-3">
+        <p class="m-0">Notification Settings</p>
+      </a>
+      <a class="d-flex p-2 text-decoration-none fw-bold">
+        <img src="../images/logout_green.png" alt="prifile" style="height: 1.5rem; width: 1.5rem;" class="me-3">
+        <p class="m-0">Logout</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

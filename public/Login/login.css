@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bs-gray: #9699A0;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  height: 100vh;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+.border-bottom-gray {
+  border-color: var(--bs-gray);
+}
+
+#login {
+  height: 4rem;
+  background: linear-gradient(180deg, #004A93 0%, #0275C5 100%);
+  border-radius: 0.8rem;
+  border: none;
+  width: 84%;
+  color: #FFF;
+  margin-top: 2rem;
+  margin-left: 4rem;
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
+}

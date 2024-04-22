@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./stores.css">
+  <link rel="stylesheet" href="../helper.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="./stores.js"></script>
+  <script defer src="../helper.js"></script>
+  <title>Alos | Stores</title>
+</head>
+<body>
+  <div class="container-fluid p-0 h-100">
+    <nav class="d-flex flex-row justify-content-between align-items-center">
+      <div class="d-md-none w-100 d-flex justify-content-between">
+        <img src="../images/logo.png" alt="logo" style="width: 12rem;" class="ms-5">
+        <nav class="navbar navbar-light bg-light" style="width: fit-content;">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar_content">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+      </div>
+      <div class="offcanvas-end w-100" id="navbar_content">
+        <div class="d-flex flex-md-row flex-column w-100 justify-content-md-between offcanvas-body">
+          <div class="col-md-6 col-12 d-flex flex-md-row flex-column align-items-md-center">
+            <img src="../images/logo.png" alt="logo" class="ms-md-5 nav_logo">
+            <button class="shadow-none border-0 ms-md-5 bg-transparent w-auto my-md-0 my-3">
+              <img src="../images/menu.png" alt="Menu">
+            </button>
+            <h4 class="text-primary fw-bold m-0 ms-3 mb-md-0 mb-3">Stores</h4>
+          </div>
+          <div class="col-md-6 col-12 align-items-md-center justify-content-end d-flex flex-md-row flex-column">
+            <div class="position-relative">
+              <input type="text" class="nav-search">
+              <img src="../images/search_black_24dp (1) 1.png" alt="search" class="position-absolute top-0 bottom-0 my-auto" style="left: 1rem;">
+            </div>
+            <div class="user d-flex flex-row align-items-center ms-md-5 me-md-5 my-md-0 my-3">
+              <span class="d-block bg-gray rounded-circle" style="height: 4rem; width: 4rem;"></span>
+              <p class="m-0 fw-bold fs-5 ms-3">John</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="d-flex flex-row">
+      <div class="sidebar_wrapper">
+        <nav class="navbar d-md-none d-block">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+        <div class="offcanvas-left" id="offcanvasLeft">
+          <div class="offcanvas-body p-0">
+            <div class="sidebar pb-5 bg-primary" style="top: 0;">
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Dashboard/dashboard.html'">
+                <img src="../images/dashboard.png" alt="dashboard_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Dashboard</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Customers/customer.html'">
+                <img src="../images/customer.png" alt="customer_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Customers</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Inventory/inventory.html'">
+                <img src="../images/tonometer.png" alt="logistics_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Logistics</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Orders/orders.html'">
+                <img src="../images/cart.png" alt="manage_orders_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Manage Orders</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Engineering/engineering.html'">
+                <img src="../images/request_service.png" alt="engineering_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Engineering</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Report/report.html'">
+                <img src="../images/request_service.png" alt="report_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Report & Analytics</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Discounts/discounts.html'">
+                <img src="../images/discount.png" alt="promotions_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Promotions and Discounts</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/CMS/cms.html'">
+                <img src="../images/cms.png" alt="cms_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">CMS</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Settings/settings.html'">
+                <img src="../images/push_notifications.png" alt="settings_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Settings</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Feedback/feedback.html'">
+                <img src="../images/favourite.png" alt="feedback_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Feedback and Reviews</p>
+              </div>
+              <div class="active p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Stores/stores.html'">
+                <img src="../images/grocery.png" alt="stores_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Stores</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Accounts/accounts.html'">
+                <img src="../images/accounts.png" alt="accounts_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Accounts</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Sales/sales.html'">
+                <img src="../images/sales_representative.png" alt="sales_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Sales Representative</p>
+              </div>
+              <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Engineer/engineer.html'">
+                <img src="../images/engineer.png" alt="engineer_icon" style="width: 1.3rem;">
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Engineer</p>
+              </div>
+            </div>
+            <div class="d-none d-md-flex flex-row justify-content-between bg-primary align-items-center position-absolute bottom-0 border-top border-top-primary border-5 w-100">
+              <button class="m-0 p-2 bg-transparent border-0 border">
+                <img src="../images/privacy_tip_black_24dp 1.png" alt="privacy" style="width: 1.3rem;">
+              </button>
+              <button class="m-0 p-2 bg-transparent border-0 border">
+                <img src="../images/help_white.png" alt="privacy" style="width: 1.3rem;">
+              </button>
+              <button class="m-0 p-2 bg-transparent border-0 border">
+                <img src="../images/power.png" alt="privacy" style="width: 1.3rem;">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-grow-1 p-4" style="position: absolute; top: 6rem; width: calc(100% - 20rem); left: 20rem; z-index: 1;">
+        <div class="table_wrapper my-4">
+          <div class="d-flex my-3 align-items-center justify-content-between">
+            <h4 class="m-0 fw-bold">List of all Products</h4>
+            <button class="bg-transparent fw-bold text-primary border-primary rounded-3 border-3 px-3 py-2" onclick="showDetails(event, 'invoice_waybill')">Create Invoice / way Bill</button>
+          </div>
+          <div class="equipment table">
+            <div class="table_header d-flex flex-row justify-content-between">
+              <p class="col-3 m-0 text-center">Product Name</p>
+              <p class="col-1 m-0 text-center">SKU</p>
+              <p class="col-2 m-0 text-center">Stock Status</p>
+              <p class="col-1 m-0 text-center">Price</p>
+              <p class="col-2 m-0 text-center">Store Name</p>
+              <p class="col-2 m-0 text-center">Expiry Date</p>
+              <p class="col-1 m-0 text-center">Action</p>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <div class="d-flex align-items-center col-3">
+                <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
+                <p class="m-0 ms-2">Urine Analyzer</p>
+              </div>
+              <p class="col-1 text-center m-0">PR - 001</p>
+              <p class="col-2 text-center m-0 fw-bold text-success">In Stock (120)</p>
+              <p class="col-1 text-center m-0 fw-bold text-success">$ 200</p>
+              <p class="col-2 text-center m-0">Gahana</p>
+              <p class="col-2 text-center m-0">12/01/2024</p>
+              <div class="d-flex justify-content-between col-1 align-items-center">
+                <button class="border-0 bg-transparent" onclick="showDetails(event)" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+              </div>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <div class="d-flex align-items-center col-3">
+                <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
+                <p class="m-0 ms-2">Urine Analyzer</p>
+              </div>
+              <p class="col-1 text-center m-0">PR - 001</p>
+              <p class="col-2 text-center m-0 fw-bold text-yellow">Low Inventory (4)</p>
+              <p class="col-1 text-center m-0 fw-bold text-success">$ 200</p>
+              <p class="col-2 text-center m-0">Gahana</p>
+              <p class="col-2 text-center m-0">12/01/2024</p>
+              <div class="d-flex justify-content-between col-1 align-items-center">
+                <button class="border-0 bg-transparent" onclick="showDetails(event)" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+              </div>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <div class="d-flex align-items-center col-3">
+                <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
+                <p class="m-0 ms-2">Urine Analyzer</p>
+              </div>
+              <p class="col-1 text-center m-0">PR - 001</p>
+              <p class="col-2 text-center m-0 fw-bold text-danger">Out of Stock (0)</p>
+              <p class="col-1 text-center m-0 fw-bold text-success">$ 200</p>
+              <p class="col-2 text-center m-0">Gahana</p>
+              <p class="col-2 text-center m-0">20/07/2023</p>
+              <div class="d-flex justify-content-between col-1 align-items-center">
+                <button class="border-0 bg-transparent" onclick="showDetails(event)" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+              </div>
+            </div>
+            <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+              <div class="d-flex align-items-center col-3">
+                <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
+                <p class="m-0 ms-2">Urine Analyzer</p>
+              </div>
+              <p class="col-1 text-center m-0">PR - 001</p>
+              <p class="col-2 text-center m-0 fw-bold text-primary">On Demand</p>
+              <p class="col-1 text-center m-0 fw-bold text-success">$ 200</p>
+              <p class="col-2 text-center m-0">Gahana</p>
+              <p class="col-2 text-center m-0">20/07/2023</p>
+              <div class="d-flex justify-content-between col-1 align-items-center">
+                <button class="border-0 bg-transparent" onclick="showDetails(event)" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+              </div>
+            </div>
+          </div>
+          <div class="pagination d-flex justify-content-between">
+            <p class="m-0 fw-bold fs-5">Showing <span class="text-primary">01 - 07</span> of 14 entries</p>
+            <div class="d-flex align-items-center">
+              <p class="m-0 fw-bold ms-2">Previous</p>
+              <p class="m-0 fw-bold ms-2 px-3 py-2 bg-primary text-white rounded-3">1</p>
+              <p class="m-0 fw-bold ms-2 px-3 py-2 bg-gray text-white rounded-3">2</p>
+              <p class="m-0 fw-bold ms-2 px-3 py-2 bg-gray text-white rounded-3">3</p>
+              <p class="m-0 fw-bold ms-2">Next</p>
+            </div>
+          </div>
+        </div>
+        <div class="details d-none box p-3 rounded-4">
+          <h4 onclick="showDetails(event)" style="cursor: pointer;" class="fw-bold"><span class="text-primary">Back > </span>Details</h4>
+          <div class="d-flex justify-content-between my-4">
+            <div class="col-2 popup_left">
+              <span class="d-block rounded-3 bg-gray popup_user_photo"></span>
+              <button class="rounded-3 fw-bold text-white bg-danger border-0 py-3 my-3">Delete</button>
+              <button class="rounded-3 fw-bold py-3 border-primary border-2 bg-transparent text-primary">Block</button>
+            </div>
+            <div class="col-10 form">
+              <div class="d-flex justify-content-between">
+                <div class="d-flex align-items-center fw-bold col-5">
+                  <p class="m-0 col-3">Product Name</p>
+                  <input type="text" class="rounded-3 col-9" placeholder="Alex">
+                </div>
+                <div class="d-flex align-items-center fw-bold col-5">
+                  <p class="m-0 col-3">SKU</p>
+                  <input type="text" class="rounded-3 col-9" placeholder="-">
+                </div>
+              </div>
+              <div class="d-flex justify-content-between my-4">
+                <div class="d-flex align-items-center fw-bold col-5">
+                  <p class="m-0 col-3">Expiry Date</p>
+                  <input type="date" class="rounded-3 col-9">
+                </div>
+                <div class="d-flex align-items-center fw-bold col-5">
+                  <p class="m-0 col-3">Price</p>
+                  <input type="text" class="rounded-3 col-9">
+                </div>
+              </div>
+              <div class="d-flex justify-content-between mb-4">
+                <div class="d-flex align-items-center fw-bold col-5">
+                  <p class="m-0 col-3">Stock Status</p>
+                  <div class="dropdown col-9">
+                    <button class="dropdown-toggle text-start px-3 py-2 border-0 bg-transparent" type="button" data-bs-toggle="dropdown">Stock Status</button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#" class="dropdown-item">Lorem, ipsum.</a></li>
+                      <li><a href="#" class="dropdown-item">Lorem, ipsum.</a></li>
+                      <li><a href="#" class="dropdown-item">Lorem, ipsum.</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center fw-bold col-5">
+                  <p class="m-0 col-3">Store Name</p>
+                  <input type="text" class="rounded-3 col-9" placeholder="Ghana">
+                </div>
+              </div>
+              <div class="d-flex fw-bold col-12">
+                <p class="m-0" style="width: 10%;">Shipment Tracking</p>
+                <div class="box rounded-4 p-4 w-100">
+                  <div class="stage d-flex">
+                    <div class="tracker">
+                      <span class="bg-primary rounded-circle d-block" style="width: 1.5rem; height: 1.5rem;"></span>
+                      <span class="d-block h-100 border-primary border-2 mx-auto" style="border-style: dashed; width: 0;"></span>
+                    </div>
+                    <div class="ms-4">
+                      <p class="fw-bold mb-1">In Transit</p>
+                      <p class="fw-normal mb-1">Store Name : Ghana</p>
+                      <p class="fw-normal mb-1">Technician : Alex</p>
+                      <p class="fw-normal mb-1">Date Initiated : 10/01/2023</p>
+                    </div>
+                  </div>
+                  <div class="stage d-flex">
+                    <div class="tracker">
+                      <span class="bg-primary rounded-circle d-block" style="width: 1.5rem; height: 1.5rem;"></span>
+                      <span class="d-block h-100 border-primary border-2 mx-auto" style="border-style: dashed; width: 0;"></span>
+                    </div>
+                    <div class="ms-4">
+                      <p class="fw-bold mb-1">Received at</p>
+                      <p class="fw-normal mb-1">Store Name : Ghana</p>
+                      <p class="fw-normal mb-1">Technician : Alex</p>
+                      <p class="fw-normal mb-1">Date Initiated : 10/01/2023</p>
+                    </div>
+                  </div>
+                  <div class="stage d-flex">
+                    <div class="tracker">
+                      <span class="bg-primary rounded-circle d-block" style="width: 1.5rem; height: 1.5rem;"></span>
+                      <span class="d-block h-100 border-primary border-2 mx-auto" style="border-style: dashed; width: 0;"></span>
+                    </div>
+                    <div class="ms-4">
+                      <p class="fw-bold mb-1">Shipped from</p>
+                      <p class="fw-normal mb-1">Store Name : Ghana</p>
+                      <p class="fw-normal mb-1">Technician : Alex</p>
+                      <p class="fw-normal mb-1">Date Initiated : 10/01/2023</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="border-0 bg-transparent fw-bold fs-5" onclick="showDetails(event, 'add_tracking')">Add Tracking Info</button>
+              <div class="add_tracking d-none d-flex fw-bold col-12">
+                <p class="m-0" style="width: 10%;">Shipment Tracking</p>
+                <div class="box rounded-4 p-4 w-100">
+                  <div class="stage d-flex">
+                    <div class="tracker">
+                      <span class="bg-primary rounded-circle d-block" style="width: 1.5rem; height: 1.5rem;"></span>
+                      <span class="d-block h-100 border-primary border-2 mx-auto" style="border-style: dashed; width: 0;"></span>
+                    </div>
+                    <div class="ms-4">
+                      <p class="fw-bold mb-1">In Transit</p>
+                      <p class="fw-normal mb-1">Store Name : Ghana</p>
+                      <p class="fw-normal mb-1">Technician : Alex</p>
+                      <p class="fw-normal mb-1">Date Initiated : 10/01/2023</p>
+                    </div>
+                  </div>
+                  <div class="stage d-flex">
+                    <div class="tracker">
+                      <span class="bg-primary rounded-circle d-block" style="width: 1.5rem; height: 1.5rem;"></span>
+                      <span class="d-block h-100 border-primary border-2 mx-auto" style="border-style: dashed; width: 0;"></span>
+                    </div>
+                    <div class="ms-4">
+                      <p class="fw-bold mb-1">Received at</p>
+                      <p class="fw-normal mb-1">Store Name : Ghana</p>
+                      <p class="fw-normal mb-1">Technician : Alex</p>
+                      <p class="fw-normal mb-1">Date Initiated : 10/01/2023</p>
+                    </div>
+                  </div>
+                  <div class="stage d-flex">
+                    <div class="tracker">
+                      <span class="bg-primary rounded-circle d-block" style="width: 1.5rem; height: 1.5rem;"></span>
+                      <span class="d-block h-100 border-primary border-2 mx-auto" style="border-style: dashed; width: 0;"></span>
+                    </div>
+                    <div class="ms-4">
+                      <p class="fw-bold mb-1">Shipped from</p>
+                      <p class="fw-normal mb-1">Store Name : Ghana</p>
+                      <p class="fw-normal mb-1">Technician : Alex</p>
+                      <p class="fw-normal mb-1">Date Initiated : 10/01/2023</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="invoice_waybill box p-3 rounded-4 d-none">
+          <h4 onclick="showDetails(event, 'invoice_waybill')" style="cursor: pointer;" class="fw-bold"><span class="text-primary">Back > </span></h4>
+          <div class="my-4">
+            <ul class="nav nav-tabs my-4" id="tabs">
+              <li role="presentation" class="nav-item"><button class="nav-link active" type="button" role="tab" data-bs-toggle="tab" data-bs-target="#invoice">Invoice</button></li>
+              <li role="presentation" class="nav-item"><button class="nav-link" type="button" role="tab" data-bs-toggle="tab" data-bs-target="#way_bill">Way Bill</button></li>
+            </ul>
+            <div class="d-flex flex-column align-items-center">
+              <img src="../images/logo.png" alt="logo" class="col-2">
+              <div class="d-flex my-4 flex-column align-items-center">
+                <p class="mb-1">Deals in General Medical Equipment, Reagents, Consumables & Services</p>
+                <p class="text-gray mb-1">Location: FH948 OXYGEN STREET GW-0988-6564, Oduman, Ghana</p>
+                <div class="d-flex mb-1 text-gray">
+                  <p>Tel (+233) 50 157 6932</p>
+                  <p>Email: alosparakletgh@gmail.com / alosparaklethealthcare.com</p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" role="tabpanel" id="invoice">
+                <div class="col-12 form">
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex align-items-center fw-bold col-5">
+                      <p class="m-0 col-3">Invoice No</p>
+                      <input type="text" class="rounded-3 col-9" placeholder="2023156">
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between my-4">
+                    <div class="d-flex align-items-center fw-bold col-5">
+                      <p class="m-0 col-3">Name</p>
+                      <input type="text" class="rounded-3 col-9">
+                    </div>
+                    <div class="d-flex align-items-center fw-bold col-5">
+                      <p class="m-0 col-3">Address</p>
+                      <input type="text" class="rounded-3 col-9">
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between mb-4">
+                    <div class="d-flex align-items-center fw-bold col-5">
+                      <p class="m-0 col-3">E.O.P</p>
+                      <input type="text" class="rounded-3 col-9" placeholder="Ghana">
+                    </div>
+                    <div class="d-flex align-items-center fw-bold col-5">
+                      <p class="m-0 col-3">Date</p>
+                      <input type="date" class="rounded-3 col-9" placeholder="Ghana">
+                    </div>
+                  </div>
+                </div>
+                <div class="table_wrapper my-4">
+                  <div class="table">
+                    <div class="table_header d-flex flex-row justify-content-between">
+                      <p class="col-1 m-0 text-center">Qty</p>
+                      <p class="col-2 m-0 text-center">Description</p>
+                      <p class="col-1 m-0 text-center">Unit Price</p>
+                      <p class="col-2 m-0 text-center">Amount  GH₵</p>
+                      <p class="col-1 m-0 text-center">Action</p>
+                    </div>
+                    <div class="table_value my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                      <p class="col-1 text-center m-0">10</p>
+                      <p class="col-2 text-center m-0">Lorem ipsum</p>
+                      <p class="col-1 text-center m-0 text-success">25</p>
+                      <p class="col-2 text-center m-0 fw-bold">250</p>
+                      <div class="d-flex justify-content-between col-1 align-items-center">
+                        <button class="border-0 bg-transparent" onclick="showPopup()" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                        <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                      </div>
+                    </div>
+                    <div class="table_value my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                      <p class="col-1 text-center m-0">10</p>
+                      <p class="col-2 text-center m-0">Lorem ipsum</p>
+                      <p class="col-1 text-center m-0 text-success">25</p>
+                      <p class="col-2 text-center m-0 fw-bold">250</p>
+                      <div class="d-flex justify-content-between col-1 align-items-center">
+                        <button class="border-0 bg-transparent" onclick="showPopup()" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                        <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                      </div>
+                    </div>
+                    <div class="table_value my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                      <p class="col-1 text-center m-0">10</p>
+                      <p class="col-2 text-center m-0">Lorem ipsum</p>
+                      <p class="col-1 text-center m-0 text-success">25</p>
+                      <p class="col-2 text-center m-0 fw-bold">250</p>
+                      <div class="d-flex justify-content-between col-1 align-items-center">
+                        <button class="border-0 bg-transparent" onclick="showPopup()" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                        <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-end align-items-center pe-3 mb-4">
+                    <button class="border-0 bg-transparent" onclick="showPopup()"><img src="../images/add_folder.png" alt="add_row" style="width: 1.5rem;"></button>
+                  </div>
+                  <p class="m-0 text-primary fw-bold ms-3">Total  GH₵ </p>
+                  <div class="buttons d-flex align-items-center justify-content-end">
+                    <button class="bg-transparent border-0 fw-bold text-gray px-3 py-2">Cancel</button>
+                    <button class="bg-gradient rounded-3 border-0 fw-bold text-white px-3 py-2">Generate Invoice</button>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" role="tabpanel" id="way_bill">
+                <div class="col-12 form">
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex align-items-center fw-bold col-5">
+                      <p class="m-0 col-3">Invoice No</p>
+                      <input type="text" class="rounded-3 col-9" placeholder="2023156">
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between my-4">
+                    <div class="d-flex align-items-center fw-bold col-5">
+                      <p class="m-0 col-3">Bill To</p>
+                      <input type="text" class="rounded-3 col-9">
+                    </div>
+                    <div class="d-flex align-items-center fw-bold col-5">
+                      <p class="m-0 col-3">Address</p>
+                      <input type="text" class="rounded-3 col-9">
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between mb-4">
+                    <div class="d-flex align-items-center fw-bold col-5">
+                      <p class="m-0 col-3">Phone No</p>
+                      <input type="text" class="rounded-3 col-9" placeholder="Ghana">
+                    </div>
+                    <div class="d-flex align-items-center fw-bold col-5">
+                      <p class="m-0 col-3">Date</p>
+                      <input type="date" class="rounded-3 col-9" placeholder="Ghana">
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between mb-4">
+                    <div class="d-flex align-items-center fw-bold col-5">
+                      <p class="m-0 col-3">Order No</p>
+                      <input type="text" class="rounded-3 col-9" placeholder="Ghana">
+                    </div>
+                    <div class="d-flex align-items-center fw-bold col-5">
+                      <p class="m-0 col-3">Job</p>
+                      <input type="text" class="rounded-3 col-9" placeholder="Ghana">
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between mb-4">
+                    <div class="d-flex align-items-center fw-bold col-5">
+                      <p class="m-0 col-3">Issued By</p>
+                      <input type="text" class="rounded-3 col-9" placeholder="Ghana">
+                    </div>
+                    <div class="d-flex align-items-center fw-bold col-5">
+                      <p class="m-0 col-3">Receivers Name</p>
+                      <input type="text" class="rounded-3 col-9" placeholder="Ghana">
+                    </div>
+                  </div>
+                </div>
+                <div class="table_wrapper my-4">
+                  <div class="table">
+                    <div class="table_header d-flex flex-row justify-content-between">
+                      <p class="col-1 m-0 text-center">Qty</p>
+                      <p class="col-2 m-0 text-center">Description</p>
+                      <p class="col-1 m-0 text-center">Unit Price</p>
+                      <p class="col-2 m-0 text-center">Amount  GH₵</p>
+                      <p class="col-1 m-0 text-center">Action</p>
+                    </div>
+                    <div class="table_value my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                      <p class="col-1 text-center m-0">10</p>
+                      <p class="col-2 text-center m-0">Lorem ipsum</p>
+                      <p class="col-1 text-center m-0 text-success">25</p>
+                      <p class="col-2 text-center m-0 fw-bold">250</p>
+                      <div class="d-flex justify-content-between col-1 align-items-center">
+                        <button class="border-0 bg-transparent" onclick="showPopup()" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                        <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                      </div>
+                    </div>
+                    <div class="table_value my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                      <p class="col-1 text-center m-0">10</p>
+                      <p class="col-2 text-center m-0">Lorem ipsum</p>
+                      <p class="col-1 text-center m-0 text-success">25</p>
+                      <p class="col-2 text-center m-0 fw-bold">250</p>
+                      <div class="d-flex justify-content-between col-1 align-items-center">
+                        <button class="border-0 bg-transparent" onclick="showPopup()" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                        <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                      </div>
+                    </div>
+                    <div class="table_value my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                      <p class="col-1 text-center m-0">10</p>
+                      <p class="col-2 text-center m-0">Lorem ipsum</p>
+                      <p class="col-1 text-center m-0 text-success">25</p>
+                      <p class="col-2 text-center m-0 fw-bold">250</p>
+                      <div class="d-flex justify-content-between col-1 align-items-center">
+                        <button class="border-0 bg-transparent" onclick="showPopup()" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                        <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-end align-items-center pe-3 mb-4">
+                    <button class="border-0 bg-transparent" onclick="showPopup()"><img src="../images/add_folder.png" alt="add_row" style="width: 1.5rem;"></button>
+                  </div>
+                  <p class="m-0 text-primary fw-bold ms-3">Total  GH₵ </p>
+                  <div class="buttons d-flex align-items-center justify-content-end">
+                    <button class="bg-transparent border-0 fw-bold text-gray px-3 py-2">Cancel</button>
+                    <button class="bg-gradient rounded-3 border-0 fw-bold text-white px-3 py-2">Generate Invoice</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup position-fixed left-0 right-0 mx-auto edit_product rounded-3 bg-white p-4 d-none">
+          <div class="d-flex align-items-center justify-content-between">
+            <h4 class="text-primary fw-bold">Details</h4>
+            <div class="d-flex align-items-center">
+              <button class="bg-transparent text-gray me-4 border-0" onclick="showPopup()">Cancel</button>
+              <button class="rounded-3 bg-gradient text-white fw-bold border-0 px-5 py-2">Update</button>
+            </div>
+          </div>
+          <div class="mb-4">
+            <p>Item No</p>
+            <input type="text" class="w-100" placeholder="10215">
+          </div>
+          <div class="mb-4">
+            <p>Description</p>
+            <input type="text" class="w-100" placeholder="Lorem Ipsum">
+          </div>
+          <div class="mb-4">
+            <p>Qty</p>
+            <input type="text" class="w-100" placeholder="25">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu position-absolute rounded-3 bg-white text-black">
+      <a class="d-flex p-2 text-decoration-none fw-bold">
+        <img src="../images/account_circle_green.png" alt="prifile" style="height: 1.5rem; width: 1.5rem;" class="me-3">
+        <p class="m-0">Profile</p>
+      </a>
+      <a class="d-flex p-2 text-decoration-none fw-bold">
+        <img src="../images/password_green.png" alt="prifile" style="height: 1.5rem; width: 1.5rem;" class="me-3">
+        <p class="m-0">Change Password</p>
+      </a>
+      <a class="d-flex p-2 text-decoration-none fw-bold">
+        <img src="../images/notifications_green.png" alt="prifile" style="height: 1.5rem; width: 1.5rem;" class="me-3">
+        <p class="m-0">Notification Settings</p>
+      </a>
+      <a class="d-flex p-2 text-decoration-none fw-bold">
+        <img src="../images/logout_green.png" alt="prifile" style="height: 1.5rem; width: 1.5rem;" class="me-3">
+        <p class="m-0">Logout</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
