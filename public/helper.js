@@ -1,6 +1,9 @@
 const user = document.querySelector('.user');
 const menu = document.querySelector('.menu');
 const top_cards = document.querySelector('.top_cards');
+const logout = document.querySelector('.sidebar').nextElementSibling.querySelector('button:nth-child(3)');
+const nav = document.querySelector('nav.d-flex.flex-row.justify-content-between.align-items-center');
+const sidebarWrapper = document.querySelector('.sidebar_wrapper');
 
 async function fade(element) {
   await gsap.fromTo(element, {
@@ -52,7 +55,7 @@ user.addEventListener('click', async () => {
   }
 });
 
-function animate() {
+async function animate() {
   if (top_cards) {
     gsap.fromTo('.top_cards > div', {
       opacity: 0,
@@ -64,7 +67,7 @@ function animate() {
     });
   }
 
-  gsap.fromTo('nav', {
+  gsap.fromTo('nav.d-flex.flex-row.justify-content-between.align-items-center', {
     opacity: 0,
     y: '-6rem'
   }, {
@@ -73,7 +76,7 @@ function animate() {
     duration: 0.5
   });
 
-  gsap.fromTo('.sidebar_wrapper', {
+  await gsap.fromTo('.sidebar_wrapper', {
     opacity: 0,
     x: '-6rem'
   }, {
@@ -81,8 +84,33 @@ function animate() {
     x: 0,
     duration: 0.5
   });
+
+  nav.style = "";
+  sidebarWrapper.style = "";
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  animate();
+function toggleSidebarAndNav() {
+  if (window.innerWidth < 768) {
+    document.querySelector('.offcanvas-left').classList.add('offcanvas');
+    document.querySelector('#navbar_content').classList.add('offcanvas');
+    document.querySelector('#navbar_content').classList.remove('w-100');
+  } else {
+    document.querySelector('.offcanvas-left').classList.remove('offcanvas');
+    document.querySelector('#navbar_content').classList.remove('offcanvas');
+    document.querySelector('#navbar_content').classList.add('w-100');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  toggleSidebarAndNav();
+  
+  await animate();
+});
+
+window.addEventListener('resize', () => {
+  toggleSidebarAndNav();
+});
+
+logout.addEventListener('click', () => {
+  window.location.href = '/Login/login.html';
 });

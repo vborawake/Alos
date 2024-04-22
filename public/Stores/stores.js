@@ -5,28 +5,8 @@ const invoice_waybill = document.querySelector('.invoice_waybill');
 const popup = document.querySelector('.popup');
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth < 768) {
-    document.querySelector('.offcanvas-left').classList.add('offcanvas');
-    document.querySelector('#navbar_content').classList.add('offcanvas');
-  } else {
-    document.querySelector('.offcanvas-left').classList.remove('offcanvas');
-    document.querySelector('#navbar_content').classList.remove('offcanvas');
-  }
-
   stagger('.table_wrapper > div');
   stagger('.equipment > div');
-});
-
-window.addEventListener('resize', () => {
-  if (window.innerWidth < 768) {
-    document.querySelector('.offcanvas-left').classList.add('offcanvas');
-    document.querySelector('#navbar_content').classList.add('offcanvas');
-    document.querySelector('#navbar_content').classList.remove('w-100');
-  } else {
-    document.querySelector('.offcanvas-left').classList.remove('offcanvas');
-    document.querySelector('#navbar_content').classList.remove('offcanvas');
-    document.querySelector('#navbar_content').classList.add('w-100');
-  }
 });
 
 function elementVisible(element) {
