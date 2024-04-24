@@ -90,8 +90,8 @@ async function animate() {
 }
 
 function toggleSidebarAndNav() {
-  if (window.innerWidth < 768) {
-    document.querySelector('.offcanvas-left').classList.add('offcanvas');
+  if (window.innerWidth < 1200) {
+    if (window.innerWidth < 768) document.querySelector('.offcanvas-left').classList.add('offcanvas');
     document.querySelector('#navbar_content').classList.add('offcanvas');
     document.querySelector('#navbar_content').classList.remove('w-100');
   } else {

@@ -16,7 +16,7 @@
 <body>
   <div class="container-fluid p-0 h-100">
     <nav class="d-flex flex-row justify-content-between align-items-center">
-      <div class="d-md-none w-100 d-flex justify-content-between">
+      <div class="d-xl-none w-100 d-flex justify-content-between">
         <img src="../images/logo.png" alt="logo" style="width: 12rem;" class="ms-5">
         <nav class="navbar navbar-light bg-light" style="width: fit-content;">
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar_content">
@@ -25,20 +25,20 @@
         </nav>
       </div>
       <div class="offcanvas-end w-100" id="navbar_content">
-        <div class="d-flex flex-md-row flex-column w-100 justify-content-md-between offcanvas-body">
-          <div class="col-md-6 col-12 d-flex flex-md-row flex-column align-items-md-center">
-            <img src="../images/logo.png" alt="logo" class="ms-md-5 nav_logo">
-            <button class="shadow-none border-0 ms-md-5 bg-transparent w-auto my-md-0 my-3">
+        <div class="d-flex flex-xl-row flex-column w-100 justify-content-xl-between offcanvas-body">
+          <div class="col-xl-6 col-12 d-flex flex-xl-row flex-column align-items-xl-center">
+            <img src="../images/logo.png" alt="logo" class="ms-xl-5 nav_logo">
+            <button class="shadow-none border-0 ms-xl-5 bg-transparent w-auto my-xl-0 my-3">
               <img src="../images/menu.png" alt="Menu">
             </button>
-            <h4 class="text-primary fw-bold m-0 ms-3 mb-md-0 mb-3">Inventory</h4>
+            <h4 class="text-primary fw-bold m-0 ms-3 mb-xl-0 mb-3">Inventory</h4>
           </div>
-          <div class="col-md-6 col-12 align-items-md-center justify-content-end d-flex flex-md-row flex-column">
+          <div class="col-xl-6 col-12 align-items-xl-center justify-content-end d-flex flex-xl-row flex-column">
             <div class="position-relative">
-              <input type="text" class="nav-search">
+              <input type="text" class="nav-search" placeholder="Search">
               <img src="../images/search_black_24dp (1) 1.png" alt="search" class="position-absolute top-0 bottom-0 my-auto" style="left: 1rem;">
             </div>
-            <div class="user d-flex flex-row align-items-center ms-md-5 me-md-5 my-md-0 my-3">
+            <div class="user d-flex flex-row align-items-center ms-xl-5 me-xl-5 my-xl-0 my-3">
               <span class="d-block bg-gray rounded-circle" style="height: 4rem; width: 4rem;"></span>
               <p class="m-0 fw-bold fs-5 ms-3">John</p>
             </div>
@@ -132,19 +132,19 @@
           <div class="d-flex justify-content-between align-items-center mb-4">
             <div class="d-flex justify-content-between flex-wrap align-items-center w-50">
               <div class="dropdown">
-                <button class="btn dropdown-toggle text-primary bg-transparent border border-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">Stock Status</button>
+                <button class="btn dropdown-toggle text-primary bg-transparent border border-gray shadow-none" type="button" data-bs-toggle="dropdown" aria-expanded="false">Stock Status</button>
                 <ul class="dropdown-menu">
                   <li><a href="#" class="dropdown-item">Stock Status</a></li>
                 </ul>
               </div>
               <div class="dropdown">
-                <button class="btn dropdown-toggle text-primary bg-transparent border border-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">Product Category</button>
+                <button class="btn dropdown-toggle text-primary bg-transparent border border-gray shadow-none" type="button" data-bs-toggle="dropdown" aria-expanded="false">Product Category</button>
                 <ul class="dropdown-menu">
                   <li><a href="#" class="dropdown-item">Product Category</a></li>
                 </ul>
               </div>
               <div class="dropdown">
-                <button class="btn dropdown-toggle text-primary bg-transparent border border-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">Sort By</button>
+                <button class="btn dropdown-toggle text-primary bg-transparent border border-gray shadow-none" type="button" data-bs-toggle="dropdown" aria-expanded="false">Sort By</button>
                 <ul class="dropdown-menu">
                   <li><a href="#" class="dropdown-item">Sort By</a></li>
                 </ul>
@@ -177,7 +177,7 @@
           <div class="equipment table">
             <div class="table_header d-flex flex-row justify-content-between">
               <p class="col-3 m-0 text-center">Equipment Name</p>
-              <p class="col-1 m-0 text-center">Product Code</p>
+              <p class="col-2 m-0 text-center">Product Code</p>
               <p class="col-2 m-0 text-center">Stock Status</p>
               <p class="col-1 m-0 text-center">Price</p>
               <p class="col-2 m-0 text-center">Date</p>
@@ -189,7 +189,7 @@
                 <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
                 <p class="m-0 ms-2">Urine Analyzer</p>
               </div>
-              <p class="col-1 text-center m-0">PR - 001</p>
+              <p class="col-2 text-center m-0">PR - 001</p>
               <p class="col-2 text-center m-0 text-success">In Stock (120)</p>
               <p class="col-1 text-center m-0 text-success">$ 200</p>
               <p class="col-2 text-center m-0 fw-bold">Last Modified: 20/07/2023</p>
@@ -197,7 +197,7 @@
                 <img src="../images/Vector (4).png" alt="star-filled" class="p-0" style="width: 1rem; height: 1rem;">
                 <p class="m-0">(4)</p>
               </div>
-              <div class="d-flex justify-content-between col-1 align-items-center">
+              <div class="d-flex justify-content-center col-1 align-items-center">
                 <button class="border-0 bg-transparent" onclick="showDetails(event)" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
                 <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
               </div>
@@ -207,7 +207,7 @@
                 <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
                 <p class="m-0 ms-2">Urine Analyzer</p>
               </div>
-              <p class="col-1 text-center m-0">PR - 001</p>
+              <p class="col-2 text-center m-0">PR - 001</p>
               <p class="col-2 text-center m-0 text-yellow">Low Inventory (4)</p>
               <p class="col-1 text-center m-0 text-success">$ 200</p>
               <p class="col-2 text-center m-0 fw-bold">Last Modified: 20/07/2023</p>
@@ -215,7 +215,7 @@
                 <img src="../images/Vector (5).png" alt="star-filled" class="p-0" style="width: 1rem; height: 1rem;">
                 <p class="m-0"></p>
               </div>
-              <div class="d-flex justify-content-between col-1 align-items-center">
+              <div class="d-flex justify-content-center col-1 align-items-center">
                 <button class="border-0 bg-transparent" onclick="showDetails(event)" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
                 <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
               </div>
@@ -225,7 +225,7 @@
                 <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
                 <p class="m-0 ms-2">Urine Analyzer</p>
               </div>
-              <p class="col-1 text-center m-0">PR - 001</p>
+              <p class="col-2 text-center m-0">PR - 001</p>
               <p class="col-2 text-center m-0 text-danger">Out of Stock (0)</p>
               <p class="col-1 text-center m-0 text-success">$ 200</p>
               <p class="col-2 text-center m-0 fw-bold">Last Modified: 20/07/2023</p>
@@ -233,7 +233,7 @@
                 <img src="../images/Vector (5).png" alt="star-filled" class="p-0" style="width: 1rem; height: 1rem;">
                 <p class="m-0"></p>
               </div>
-              <div class="d-flex justify-content-between col-1 align-items-center">
+              <div class="d-flex justify-content-center col-1 align-items-center">
                 <button class="border-0 bg-transparent" onclick="showDetails(event)" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
                 <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
               </div>
@@ -243,7 +243,7 @@
                 <span class="d-block rounded-3 bg-gray" style="width: 5rem; height: 5rem;"></span>
                 <p class="m-0 ms-2">Urine Analyzer</p>
               </div>
-              <p class="col-1 text-center m-0">PR - 001</p>
+              <p class="col-2 text-center m-0">PR - 001</p>
               <p class="col-2 text-center m-0 text-primary">On Demand</p>
               <p class="col-1 text-center m-0 text-success">$ 200</p>
               <p class="col-2 text-center m-0 fw-bold">Last Modified: 20/07/2023</p>
@@ -251,7 +251,7 @@
                 <img src="../images/Vector (4).png" alt="star-filled" class="p-0" style="width: 1rem; height: 1rem;">
                 <p class="m-0">(3)</p>
               </div>
-              <div class="d-flex justify-content-between col-1 align-items-center">
+              <div class="d-flex justify-content-center col-1 align-items-center">
                 <button class="border-0 bg-transparent" onclick="showDetails(event)" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
                 <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
               </div>
@@ -440,7 +440,7 @@
                   </div>
                   <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
                     <p class="m-0 col-3">Expiring Date</p>
-                    <input type="text" class="rounded-3 col-9">
+                    <input type="date" class="rounded-3 col-9">
                   </div>
                 </div>
                 <div class="d-flex justify-content-between my-4">
@@ -488,7 +488,7 @@
                   </div>
                   <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
                     <p class="m-0 col-3">Expiring Date</p>
-                    <input type="text" class="rounded-3 col-9">
+                    <input type="date" class="rounded-3 col-9">
                   </div>
                 </div>
               </div>
@@ -520,7 +520,7 @@
                   </div>
                   <div class="d-flex align-items-center fw-bold col-lg-5 col-12 mb-4">
                     <p class="m-0 col-3">Expiring Date</p>
-                    <input type="text" class="rounded-3 col-9">
+                    <input type="date" class="rounded-3 col-9">
                   </div>
                 </div>
                 <div class="d-flex justify-content-between my-4">
@@ -564,7 +564,7 @@
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <p class="col-3 text-center m-0">Urine Analyzer</p>
                 <p class="col-3 m-0 text-success">Cold light source with high luminosity, long shelf life Innovative light sensor, high sensitivity Automatic calibration improves accuracy Standard RS232 interface for connection with external computer Storage of 1000 testing results</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
@@ -593,77 +593,77 @@
               </div>
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <p class="col-2 text-center m-0">Urine Analyzer</p>
-                <p class="col-2 m-0 text-success">10</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <p class="col-2 m-0 text-success text-center">10</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
               </div>
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <p class="col-2 text-center m-0">Urine Analyzer</p>
-                <p class="col-2 m-0 text-success">10</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <p class="col-2 m-0 text-success text-center">10</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
               </div>
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <p class="col-2 text-center m-0">Urine Analyzer</p>
-                <p class="col-2 m-0 text-success">10</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <p class="col-2 m-0 text-success text-center">10</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
               </div>
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <p class="col-2 text-center m-0">Urine Analyzer</p>
-                <p class="col-2 m-0 text-success">10</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <p class="col-2 m-0 text-success text-center">10</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
               </div>
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <p class="col-2 text-center m-0">Urine Analyzer</p>
-                <p class="col-2 m-0 text-success">10</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <p class="col-2 m-0 text-success text-center">10</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
               </div>
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <p class="col-2 text-center m-0">Urine Analyzer</p>
-                <p class="col-2 m-0 text-success">10</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <p class="col-2 m-0 text-success text-center">10</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
               </div>
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <p class="col-2 text-center m-0">Urine Analyzer</p>
-                <p class="col-2 m-0 text-success">10</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <p class="col-2 m-0 text-success">4</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <p class="col-2 m-0 text-success text-center">10</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <p class="col-2 m-0 text-success text-center">4</p>
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showDetails(event, 'equipment_details')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/Vector (3).png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
@@ -686,7 +686,7 @@
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <p class="col-2 text-center m-0" style="cursor: pointer;" onclick="showDetails(event, 'add_consumable')">Equipments</p>
                 <p class="col-2 m-0 text-center">120</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_category')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
@@ -694,7 +694,7 @@
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <p class="col-2 text-center m-0" style="cursor: pointer;" onclick="showDetails(event, 'add_consumable')">POCT</p>
                 <p class="col-2 m-0 text-center">120</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_category')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
@@ -702,7 +702,7 @@
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <p class="col-2 text-center m-0" style="cursor: pointer;" onclick="showDetails(event, 'add_consumable')">Tests Kits</p>
                 <p class="col-2 m-0 text-center">120</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_category')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
@@ -710,7 +710,7 @@
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <p class="col-2 text-center m-0" style="cursor: pointer;" onclick="showDetails(event, 'add_consumable')">Consumables</p>
                 <p class="col-2 m-0 text-center">120</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_category')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
@@ -733,7 +733,7 @@
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <div class="col-2"><span class="d-block rounded-3 bg-gray" style="width: 2rem; height: 2rem;"></span></div>
                 <p class="col-2 m-0 text-center">Versa tips</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_product')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
@@ -741,7 +741,7 @@
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <div class="col-2"><span class="d-block rounded-3 bg-gray" style="width: 2rem; height: 2rem;"></span></div>
                 <p class="col-2 m-0 text-center">Sample Cups</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_product')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
@@ -749,7 +749,7 @@
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <div class="col-2"><span class="d-block rounded-3 bg-gray" style="width: 2rem; height: 2rem;"></span></div>
                 <p class="col-2 m-0 text-center">Humidity Pack</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_product')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
@@ -757,7 +757,7 @@
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <div class="col-2"><span class="d-block rounded-3 bg-gray" style="width: 2rem; height: 2rem;"></span></div>
                 <p class="col-2 m-0 text-center">Micro Tips</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_product')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>
@@ -765,7 +765,23 @@
               <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
                 <div class="col-2"><span class="d-block rounded-3 bg-gray" style="width: 2rem; height: 2rem;"></span></div>
                 <p class="col-2 m-0 text-center">Dessicant Caps</p>
-                <div class="d-flex justify-content-between col-1 align-items-center">
+                <div class="d-flex justify-content-center col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_product')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <div class="col-2"><span class="d-block rounded-3 bg-gray" style="width: 2rem; height: 2rem;"></span></div>
+                <p class="col-2 m-0 text-center">Micro Tips</p>
+                <div class="d-flex justify-content-center col-1 align-items-center">
+                  <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_product')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
+                  <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
+                </div>
+              </div>
+              <div class="table_value shadow my-2 bg-transparent d-flex flex-row align-items-center justify-content-between">
+                <div class="col-2"><span class="d-block rounded-3 bg-gray" style="width: 2rem; height: 2rem;"></span></div>
+                <p class="col-2 m-0 text-center">Dessicant Caps</p>
+                <div class="d-flex justify-content-center col-1 align-items-center">
                   <button class="border-0 bg-transparent" onclick="showPopup(event, 'edit_product')" style="width: 2.5rem; height: 2.5rem;"><img src="../images/edit_black.png" class="w-100" alt="View"></button>
                   <button class="border-0 bg-transparent" style="width: 2.5rem; height: 2.5rem;"><img src="../images/delete_red.png" class="w-100" alt="Delete"></button>
                 </div>

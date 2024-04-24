@@ -14,10 +14,11 @@ const add_category = document.querySelector('.add_category');
 const edit_product = document.querySelector('.edit_product');
 const add_product = document.querySelector('.add_product');
 
-function inventoryAnimate() {
+async function inventoryAnimate() {
   stagger('.categories > button');
   stagger('.dropdown');
-  stagger('.equipment > div', 0.5);
+  await stagger('.equipment > div', 0.5);
+  document.querySelectorAll('.categories > button').forEach(el => el.style = "");
 }
 
 document.addEventListener('DOMContentLoaded', () => {
