@@ -3,6 +3,7 @@
   --bs-primary: rgba(0, 74, 147, 1);
   --bs-secondary: #0275C5;
   --light-gray: #FBF8F8;
+  --gray-200: #F1F0F0;
   --yellow: #E7B82A;
   --gray-300: #F1F0F0;
   --red: #CD0508;
@@ -51,6 +52,10 @@ nav {
 
 .bg-gray-100 {
   background: var(--light-gray) !important;
+}
+
+.bg-gray-200 {
+  background: var(--gray-200) !important;
 }
 
 .bg-danger {
@@ -158,6 +163,11 @@ nav {
 
 .table_value {
   color: black;
+  height: fit-content;
+}
+
+.table_value p {
+  background: transparent;
 }
 
 .tall {
