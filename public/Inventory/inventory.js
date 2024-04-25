@@ -124,6 +124,12 @@ async function showDetails(event, screen='') {
       add_equipment.classList.add('d-none');
       add_consumable.classList.remove('d-none');
       fade(add_consumable);
+    } else if (screen === 'to_equipment') {
+      table_wrapper.classList.add('d-none');
+      top_filters.classList.add('d-none');
+      add_equipment.classList.remove('d-none');
+      add_consumable.classList.add('d-none');
+      fade(add_equipment);
     }
   }
 }
@@ -144,5 +150,20 @@ async function showPopup(event, popup) {
   else if (popup === 'edit_product') {
     edit_product.classList.remove('d-none');
     await fade(edit_product);
+  }
+}
+
+function onManagementEquipmentClick(screen = '') {
+  if (top_filters.classList.contains('d-none') && !elementVisible(table_wrapper)) {
+    top_filters.classList.remove('d-none');
+    table_wrapper.classList.remove('d-none');
+    add_equipment.classList.add('d-none');
+    fade(top_filters);
+    fade(table_wrapper);
+  } else {
+    top_filters.classList.add('d-none');
+    table_wrapper.classList.add('d-none');
+    add_equipment.classList.remove('d-none');
+    fade(add_equipment);
   }
 }
