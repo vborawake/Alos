@@ -86,6 +86,10 @@ input {
   .table_header, .table_value {
     width: 50rem !important;
   }
+
+  .popup.bg-white {
+    max-width: 50%;
+  }
 }
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
@@ -100,6 +104,10 @@ input {
   .top-card {
     width: 48%;
   }
+
+  .popup.bg-white {
+    max-width: 50%;
+  }
 }
 
 @media screen and (min-width: 400px) and (max-width: 576px) {
@@ -112,5 +120,9 @@ input {
 
   .table_header, .table_value {
     width: 40rem !important;
+  }
+
+  .popup.bg-white {
+    max-width: 50%;
   }
 }
