@@ -126,8 +126,11 @@ document.addEventListener('DOMContentLoaded', () => {
   p.style.width = '4rem';
   p.style.textAlign = 'center';
   doughnut_chart_wrapper.insertAdjacentElement('beforeend', p);
+  p.style.right = '0';
+  p.style.left = '0';
+  p.style.margin = 'auto auto';
   p.style.top = `${ doughnut_chart_wrapper.getBoundingClientRect().height / 2 - (p.getBoundingClientRect().height / 1.5) }px`;
-  p.style.left = `${ doughnut_chart_wrapper.getBoundingClientRect().width / 2 - (p.getBoundingClientRect().width / 2) }px`;
+  // p.style.left = `${ doughnut_chart_wrapper.getBoundingClientRect().width / 2 - (p.getBoundingClientRect().width / 2) }px`;
   animate();
 });
 
@@ -141,4 +144,6 @@ window.addEventListener('resize', () => {
     document.querySelector('#navbar_content').classList.remove('offcanvas');
     document.querySelector('#navbar_content').classList.add('w-100');
   }
+
+  p.style.top = `${ doughnut_chart_wrapper.getBoundingClientRect().height / 2 - (p.getBoundingClientRect().height / 1.5) }px`;
 });

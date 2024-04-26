@@ -66,7 +66,7 @@
               </div>
               <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Inventory/inventory.html'">
                 <img src="../images/tonometer.png" alt="logistics_icon" style="width: 1.3rem;">
-                <p class="m-0 fw-medium fs-5 ms-3 text-white">Logistics</p>
+                <p class="m-0 fw-medium fs-5 ms-3 text-white">Inventory</p>
               </div>
               <div class="p-3 d-flex flex-row align-items-center" style="cursor: pointer;" onclick="window.location.href='/Orders/orders.html'">
                 <img src="../images/cart.png" alt="manage_orders_icon" style="width: 1.3rem;">
@@ -404,7 +404,12 @@
                 <div class="d-flex align-items-center fw-bold col-5">
                   <p class="m-0 col-3">Contact</p>
                   <div class="d-flex justify-content-between">
-                    <input type="text" class="rounded-3 col-2" placeholder="+81">
+                    <div class="dropdown me-4">
+                      <button class="btn dropdown-toggle text-gray bg-transparent shadow-gray" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 3.5rem;">+91</button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#" class="dropdown-item">+91</a></li>
+                      </ul>
+                    </div>
                     <input type="text" class="rounded-3 col-9" placeholder="25489662256">
                   </div>
                 </div>
