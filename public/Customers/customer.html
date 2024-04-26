@@ -165,7 +165,7 @@
           </div>
           <div class="customer table">
             <div class="table_header d-flex flex-row justify-content-between">
-              <p class="col-3 m-0 text-center">Name</p>
+              <p class="col-3 m-0">Name</p>
               <p class="col-2 m-0 text-center">Location</p>
               <p class="col-2 m-0 text-center">Email</p>
               <p class="col-2 m-0 text-center">Logged In at</p>
@@ -281,7 +281,12 @@
                 <div class="d-flex align-items-center fw-bold col-lg-5 col-12">
                   <p class="m-0 col-4">Contact</p>
                   <div class="d-flex justify-content-between">
-                    <input type="text" class="rounded-3 col-2" placeholder="+81">
+                    <div class="dropdown me-4">
+                      <button class="btn dropdown-toggle text-gray bg-transparent shadow-gray" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="height: 3.5rem;">+91</button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#" class="dropdown-item">+91</a></li>
+                      </ul>
+                    </div>
                     <input type="text" class="rounded-3 col-9" placeholder="25489662256">
                   </div>
                 </div>

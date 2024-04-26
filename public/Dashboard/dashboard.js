@@ -1,5 +1,6 @@
 const bar = document.getElementById('bar_chart');
 const doughnut = document.getElementById('doughnut_chart');
+const doughnut_chart_wrapper = document.querySelector('.doughnut_chart');
 const line = document.getElementById('line_chart');
 
 const config = {
@@ -118,6 +119,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#navbar_content').classList.remove('offcanvas');
   }
 
+  const p = document.createElement('p');
+  p.style.position = 'absolute';
+  p.innerHTML = `Total Earnings <span class='fw-bold'>212</span>`;
+  p.style.fontSize = '14px';
+  p.style.width = '4rem';
+  p.style.textAlign = 'center';
+  doughnut_chart_wrapper.insertAdjacentElement('beforeend', p);
+  p.style.top = `${ doughnut_chart_wrapper.getBoundingClientRect().height / 2 - (p.getBoundingClientRect().height / 1.5) }px`;
+  p.style.left = `${ doughnut_chart_wrapper.getBoundingClientRect().width / 2 - (p.getBoundingClientRect().width / 2) }px`;
   animate();
 });
 

@@ -70,7 +70,6 @@ async function showDetails(event, screen='') {
       balance.classList.remove('d-none');
       await fade(balance);
       await stagger('.stock > div');
-      localStorage.setItem('fromStock', 'true');
     }
     else if (screen === 'query') {
       query.classList.remove('d-none');
@@ -132,6 +131,11 @@ async function showDetails(event, screen='') {
       fade(add_equipment);
     }
   }
+}
+
+function productDetails() {
+  showDetails({}, 'equipment_details');
+  localStorage.setItem('fromStock', 'true');
 }
 
 async function showPopup(event, popup) {
